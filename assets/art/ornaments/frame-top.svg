@@ -1,0 +1,20 @@
+<!-- Ornament: top edge of a panel/card. Angular filigree wings flowing out from a central jewel, ends fading. 800x48, scales in width. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 48" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+<defs>
+<linearGradient id="ft-l" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e8b75a" stop-opacity="0"/><stop offset=".6" stop-color="#e8b75a"/><stop offset="1" stop-color="#fff2c8"/></linearGradient>
+<linearGradient id="ft-r" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#e8b75a" stop-opacity="0"/><stop offset=".6" stop-color="#e8b75a"/><stop offset="1" stop-color="#fff2c8"/></linearGradient>
+<filter id="ft-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+<!-- left half of the filigree; mirrored for the right -->
+<g id="ft-half" fill="none" stroke="url(#ft-l)" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M0,4H300L318,22H352" stroke-width="1.6"/>
+ <path d="M60,12H282L296,26H336" stroke-width="1" opacity=".7"/>
+ <path d="M200,4L214,18H250L262,30H290" stroke-width="1.2"/>
+ <path d="M120,4L130,14M160,4L170,14M240,4L252,16" stroke-width="1" opacity=".8"/>
+</g>
+</defs>
+<use href="#ft-half"/><use href="#ft-half" transform="translate(800 0) scale(-1 1)"/>
+<g fill="#e8b75a"><path d="M356,22l5,-5l5,5l-5,5z"/><path d="M434,22l5,-5l5,5l-5,5z"/></g>
+<path d="M400,2l16,20l-16,24l-16,-24z" fill="#f5d48a" opacity=".5" filter="url(#ft-glow)"/>
+<path d="M400,2l16,20l-16,24l-16,-24z" fill="#1a0c0c" stroke="#f5d48a" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M400,12l8,10l-8,12l-8,-12z" fill="#ff6a3d"/><path d="M400,12l8,10h-16z" fill="#ffb070"/>
+</svg>

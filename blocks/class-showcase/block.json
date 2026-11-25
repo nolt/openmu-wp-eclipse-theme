@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "openmu-eclipse/class-showcase",
+	"title": "Class showcase",
+	"category": "design",
+	"icon": "groups",
+	"description": "The three original characters (Dark Knight, Dark Wizard, Fairy Elf) with a class switcher, a short description and rating bars.",
+	"textdomain": "openmu-eclipse",
+	"supports": { "html": false, "align": [ "wide", "full" ], "autoRegister": true },
+	"render": "file:./render.php"
+}

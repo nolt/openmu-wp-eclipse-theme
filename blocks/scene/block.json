@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "openmu-eclipse/scene",
+	"title": "Eclipse scene",
+	"category": "design",
+	"icon": "cover-image",
+	"description": "The animated eclipse scene: parallax mountains, castle, fog and drifting embers. Place it first inside a full-width group to make a hero.",
+	"textdomain": "openmu-eclipse",
+	"attributes": { "variant": { "type": "string", "default": "hero" } },
+	"supports": { "html": false, "autoRegister": true },
+	"render": "file:./render.php"
+}

@@ -1,0 +1,174 @@
+<!-- Fairy Elf: original full-body illustration (800x1200, transparent). Three-quarter contrapposto archer in leaf-pattern emerald light armour, windblown silver hair, glowing green eyes, circlet, quiver with fletched arrows; she draws a glowing recurve bow, the string pulled to the anchor under her jaw, elbow raised out to the side. Cool rim light left, golden rim light right. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-label="Fairy Elf">
+<defs>
+<linearGradient id="elf-sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>
+<linearGradient id="elf-plate" gradientUnits="userSpaceOnUse" x1="200" y1="0" x2="620" y2="0"><stop offset="0" stop-color="#0c2a2c"/><stop offset=".22" stop-color="#2c8a78"/><stop offset=".45" stop-color="#145048"/><stop offset=".62" stop-color="#0f3c38"/><stop offset=".85" stop-color="#2e8a6c"/><stop offset="1" stop-color="#9ab070"/></linearGradient>
+<linearGradient id="elf-dark" gradientUnits="userSpaceOnUse" x1="200" y1="0" x2="620" y2="0"><stop offset="0" stop-color="#081a1e"/><stop offset=".3" stop-color="#14403e"/><stop offset=".55" stop-color="#0a2528"/><stop offset=".9" stop-color="#1b4a3e"/><stop offset="1" stop-color="#5a6a44"/></linearGradient>
+<linearGradient id="elf-edge" gradientUnits="userSpaceOnUse" x1="200" y1="0" x2="620" y2="0"><stop offset="0" stop-color="#5fd4ff" stop-opacity=".95"/><stop offset=".4" stop-color="#5fd4ff" stop-opacity=".1"/><stop offset=".62" stop-color="#f5d48a" stop-opacity=".15"/><stop offset="1" stop-color="#f5d48a"/></linearGradient>
+<linearGradient id="elf-skin" gradientUnits="userSpaceOnUse" x1="260" y1="0" x2="560" y2="0"><stop offset="0" stop-color="#93a9b4"/><stop offset=".25" stop-color="#d9b8a2"/><stop offset=".6" stop-color="#c49d88"/><stop offset="1" stop-color="#f0c79c"/></linearGradient>
+<linearGradient id="elf-hair" gradientUnits="userSpaceOnUse" x1="360" y1="0" x2="700" y2="0"><stop offset="0" stop-color="#8aa6c0"/><stop offset=".25" stop-color="#e4ecf4"/><stop offset=".6" stop-color="#aab6c8"/><stop offset=".9" stop-color="#d9d6c8"/><stop offset="1" stop-color="#e6d9b4"/></linearGradient>
+<linearGradient id="elf-hairdark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a7e96"/><stop offset="1" stop-color="#2c3a52"/></linearGradient>
+<linearGradient id="elf-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset=".45" stop-color="#e8b75a"/><stop offset="1" stop-color="#8a5a1e"/></linearGradient>
+<linearGradient id="elf-cape" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c6a58"/><stop offset=".6" stop-color="#0d3a38"/><stop offset="1" stop-color="#071c20"/></linearGradient>
+<linearGradient id="elf-bow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a2a14"/><stop offset=".5" stop-color="#8a6a3a"/><stop offset="1" stop-color="#2a1d0e"/></linearGradient>
+<radialGradient id="elf-aura" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#3fe0a0" stop-opacity=".26"/><stop offset=".6" stop-color="#1c8a70" stop-opacity=".09"/><stop offset="1" stop-color="#1c8a70" stop-opacity="0"/></radialGradient>
+<radialGradient id="elf-halo"><stop offset="0" stop-color="#d8ffe8" stop-opacity=".9"/><stop offset=".35" stop-color="#5fe8b0" stop-opacity=".35"/><stop offset="1" stop-color="#5fe8b0" stop-opacity="0"/></radialGradient>
+<radialGradient id="elf-floor" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".7"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<filter id="elf-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+
+<path id="elf-leaf" d="M0,0C18,-6 34,6 38,26C20,36 4,26 0,0Z"/>
+<!-- armour piece: fill + rim stroke + top-lit sheen overlay -->
+<radialGradient id="elf-face" cx=".5" cy=".42" r=".7"><stop offset="0" stop-color="#e6c4ad"/><stop offset=".7" stop-color="#d9b8a2"/><stop offset="1" stop-color="#c9a48f"/></radialGradient>
+<radialGradient id="elf-faceshade" cx=".5" cy=".4" r=".62"><stop offset=".6" stop-color="#5a3a30" stop-opacity="0"/><stop offset="1" stop-color="#5a3a30" stop-opacity=".22"/></radialGradient>
+</defs>
+
+<ellipse cx="400" cy="560" rx="400" ry="560" fill="url(#elf-aura)"/>
+<ellipse cx="400" cy="1142" rx="300" ry="26" fill="url(#elf-floor)"/>
+
+<!-- hair, back mass streaming to the right in the wind -->
+<path d="M418,110C474,104 522,150 540,230C556,300 600,330 640,400C690,480 650,560 696,650C640,620 600,596 572,546C562,606 592,664 560,730C528,666 520,606 500,546C490,486 470,426 470,336L400,262C372,230 366,160 418,110Z" fill="url(#elf-hair)" stroke="url(#elf-edge)" stroke-width="2" stroke-linejoin="round"/>
+<g fill="none" stroke-linecap="round"><path d="M450,130C500,170 520,250 548,310C580,370 626,420 640,500M470,200C500,280 540,360 556,440C566,500 600,560 640,600M480,330C490,420 510,500 540,600C548,650 560,690 556,720" stroke="#fff" stroke-opacity=".34" stroke-width="2"/><path d="M440,150C470,200 484,260 500,330C512,420 534,500 560,560" stroke="#5a6e88" stroke-opacity=".55" stroke-width="2"/></g>
+
+<!-- extra flowing hair locks (S-curves with tapered tips) -->
+<g stroke-linejoin="round" stroke="url(#elf-edge)" stroke-width="1.6">
+ <path d="M470,150C530,170 580,230 600,320C612,390 660,440 690,520C640,500 604,470 590,420C580,470 592,520 570,580C556,520 540,470 536,410C530,330 500,250 470,150Z" fill="url(#elf-hair)" opacity=".9"/>
+ <path d="M452,160C500,200 520,300 532,380C540,450 560,520 548,600C526,560 510,500 504,440C496,360 476,260 452,160Z" fill="#9fb3cc" opacity=".55" stroke="none"/>
+ <path d="M440,120C490,110 532,160 548,226C534,200 508,178 470,172Z" fill="#fff" opacity=".35" stroke="none"/>
+</g>
+<!-- quiver on the back with fletched arrows -->
+<g transform="translate(524 292) rotate(26)" stroke-linejoin="round">
+ <g fill="none" stroke-linecap="round"><path d="M-8,-150L-12,-236M2,-150L4,-244M12,-150L20,-232" stroke="#d8c8a0" stroke-width="3"/></g>
+ <g fill="#f5d48a" stroke="#fff2c8" stroke-opacity=".5" stroke-width=".8"><path d="M-12,-236l-8,-18l8,6l6,-8z"/><path d="M4,-244l-6,-18l8,4l6,-6z"/><path d="M20,-232l-4,-18l8,4l6,-4z"/></g>
+ <path d="M-22,-150L24,-150L30,10L-26,10Z" fill="url(#elf-dark)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M-22,-150L24,-150L24,-136L-22,-136Z M-25,-60L28,-60L28,-48L-25,-48Z" fill="url(#elf-gold)"/>
+ <path d="M-16,-124C-6,-100 -6,-80 -14,-70M4,-124C14,-100 14,-80 6,-70" fill="none" stroke="#5fffc0" stroke-opacity=".6" stroke-width="1.6"/>
+</g>
+
+<!-- cape fluttering right -->
+<path d="M468,292C540,300 602,360 616,474C574,444 540,452 520,504C510,432 490,384 458,344Z" fill="url(#elf-cape)" stroke="url(#elf-edge)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M610,420C612,450 612,466 616,474" fill="none" stroke="url(#elf-gold)" stroke-width="2.4"/>
+
+<!-- support leg (viewer right): exact mirror of the forward leg around x=414 (same knee arc, cuff, boot and toe) -->
+<path d="M 468,566 C 482,630 490,700 488,768 C 488,800 482,824 478,846 L 426,846 C 418,820 416,796 420,766 C 416,700 404,632 398,572 Z" fill="url(#elf-dark)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M 468,566 C 482,630 490,700 488,768 C 488,800 482,824 478,846 L 426,846 C 418,820 416,796 420,766 C 416,700 404,632 398,572 Z" fill="url(#elf-sheen)"/>
+<path d="M 462,620 C 470,690 472,750 468,800" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/>
+<path d="M 476,770 C 462,758 440,758 426,770" fill="none" stroke="url(#elf-gold)" stroke-width="1.8" opacity=".85"/>
+<path d="M 482,860 C 502,920 482,990 474,1030 C 472,1060 476,1082 488,1094 C 516,1104 554,1114 580,1126 C 590,1132 594,1138 588,1142 L 456,1142 C 440,1140 434,1124 436,1098 C 438,1060 438,1030 434,990 C 432,980 406,930 418,860 C 438,872 466,872 482,860 Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M 482,860 C 502,920 482,990 474,1030 C 472,1060 476,1082 488,1094 C 516,1104 554,1114 580,1126 C 590,1132 594,1138 588,1142 L 456,1142 C 440,1140 434,1124 436,1098 C 438,1060 438,1030 434,990 C 432,980 406,930 418,860 C 438,872 466,872 482,860 Z" fill="url(#elf-sheen)"/>
+<path d="M 490,838 C 470,826 434,826 416,838 L 422,864 C 438,874 468,874 484,864 Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M 490,838 C 470,826 434,826 416,838 L 422,864 C 438,874 468,874 484,864 Z" fill="url(#elf-sheen)"/>
+<path d="M 490,838 C 470,826 434,826 416,838" fill="none" stroke="url(#elf-gold)" stroke-width="2.6"/>
+<path d="M 468,884 C 476,930 470,990 462,1030" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 470,1070 C 488,1084 512,1094 538,1104" fill="none" stroke="url(#elf-gold)" stroke-width="2"/>
+<path d="M 582,1136 C 548,1140 498,1140 444,1136" fill="none" stroke="url(#elf-gold)" stroke-width="2.4"/>
+
+
+<!-- forward leg (viewer left): thigh, knee, shaped tall boot with high arch and pointed toe -->
+<path d="M360,566C346,630 338,700 340,768C340,800 346,824 350,846L402,846C410,820 412,796 408,766C412,700 424,632 430,572Z" fill="url(#elf-dark)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M360,566C346,630 338,700 340,768C340,800 346,824 350,846L402,846C410,820 412,796 408,766C412,700 424,632 430,572Z" fill="url(#elf-sheen)"/>
+<path d="M366,620C358,690 356,750 360,800" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="5" stroke-linecap="round"/>
+<path d="M352,770C366,758 388,758 402,770" fill="none" stroke="url(#elf-gold)" stroke-width="1.8" opacity=".85"/>
+<path d="M346,860C326,920 346,990 354,1030C356,1060 352,1082 340,1094C312,1104 274,1114 248,1126C238,1132 234,1138 240,1142L372,1142C388,1140 394,1124 392,1098C390,1060 390,1030 394,990C396,980 422,930 410,860C390,872 362,872 346,860Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M346,860C326,920 346,990 354,1030C356,1060 352,1082 340,1094C312,1104 274,1114 248,1126C238,1132 234,1138 240,1142L372,1142C388,1140 394,1124 392,1098C390,1060 390,1030 394,990C396,980 422,930 410,860C390,872 362,872 346,860Z" fill="url(#elf-sheen)"/>
+<path d="M338,838C358,826 394,826 412,838L406,864C390,874 360,874 344,864Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M338,838C358,826 394,826 412,838L406,864C390,874 360,874 344,864Z" fill="url(#elf-sheen)"/>
+<path d="M338,838C358,826 394,826 412,838" fill="none" stroke="url(#elf-gold)" stroke-width="2.6"/>
+<path d="M360,884C352,930 358,990 366,1030" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M358,1070C340,1084 316,1094 290,1104" fill="none" stroke="url(#elf-gold)" stroke-width="2"/>
+<path d="M246,1136C280,1140 330,1140 384,1136" fill="none" stroke="url(#elf-gold)" stroke-width="2.4"/>
+
+<!-- pelvis base under the skirt -->
+<path d="M352,494C338,536 346,580 366,604L454,606C474,584 476,536 462,494Z" fill="url(#elf-dark)" stroke="url(#elf-edge)" stroke-width="2.2" stroke-linejoin="round"/><path d="M352,494C338,536 346,580 366,604L454,606C474,584 476,536 462,494Z" fill="url(#elf-sheen)"/>
+
+<!-- skirt: leaf petals swept right by the wind -->
+<g stroke-linejoin="round" fill="url(#elf-cape)" stroke="url(#elf-edge)" stroke-width="2">
+ <path d="M458,500C500,552 552,614 604,646C582,590 538,536 488,492Z"/>
+ <path d="M362,498C338,562 326,636 342,716C376,664 396,584 394,500Z"/>
+ <path d="M428,498C440,580 468,668 514,724C520,640 494,560 468,498Z"/>
+ <path d="M392,498C382,580 392,672 422,748C450,672 444,580 428,498Z" fill="url(#elf-plate)"/>
+</g>
+<g fill="none" stroke="url(#elf-gold)" stroke-width="2.2" stroke-linecap="round"><path d="M392,520C390,600 400,680 422,744M344,712C366,650 382,590 386,530"/></g>
+
+<!-- torso: neck, curved bodice with waist taper, belt -->
+<path d="M406,236L406,296C414,306 430,306 438,296L438,236Z" fill="url(#elf-face)" stroke="url(#elf-edge)" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M406,236C412,262 432,262 438,236Z" fill="#05070d" opacity=".3"/>
+<path d="M350,292C336,326 346,364 358,394C368,420 366,452 372,482L440,484C446,454 444,424 452,396C464,360 468,326 462,298C438,310 380,308 350,292Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M350,292C336,326 346,364 358,394C368,420 366,452 372,482L440,484C446,454 444,424 452,396C464,360 468,326 462,298C438,310 380,308 350,292Z" fill="url(#elf-sheen)"/>
+<g fill="url(#elf-dark)" stroke="url(#elf-edge)" stroke-width="1.6" stroke-linejoin="round">
+ <path d="M356,316C382,308 406,330 406,362C382,370 362,352 356,316Z"/><path d="M458,316C434,308 410,328 408,360C432,368 452,352 458,316Z"/>
+ <path d="M366,384C386,384 400,402 402,424C384,428 370,414 366,384Z"/><path d="M450,384C432,384 418,400 414,422C432,426 446,412 450,384Z"/>
+</g>
+<path d="M406,308l11,18l-11,18l-11,-18z" fill="#5fffc0" stroke="url(#elf-gold)" stroke-width="2.4" filter="url(#elf-glow)"/>
+<path d="M354,300C344,332 354,372 364,404" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M368,474C394,490 432,492 446,478L454,508C420,522 388,522 360,508Z" fill="url(#elf-dark)" stroke="url(#elf-gold)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M406,488l13,15l-13,15l-13,-15z" fill="url(#elf-gold)" stroke="#fff2c8" stroke-opacity=".6"/>
+
+<!-- bow arm (viewer left): slender tapered arm extended forward, curved bracer -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M350,278C312,262 250,248 190,246C184,254 184,270 190,280C250,286 316,304 358,332Z" fill="url(#elf-skin)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M 350,284 C 322,260 276,258 244,272 C 264,290 298,302 328,314 C 340,306 348,296 350,284 Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2"/>
+ <path d="M278,258C250,254 222,250 200,248C194,256 194,272 200,282C224,284 252,290 282,294C288,282 288,268 278,258Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2"/>
+ <path d="M248,258L254,290M222,253L226,285" stroke="url(#elf-gold)" stroke-width="1.8"/>
+ <path d="M340,266C300,254 250,246 196,246" fill="none" stroke="#fff2c8" stroke-opacity=".35" stroke-width="2"/>
+</g>
+
+<!-- bow string, pulled to the anchor under the jaw (drawn before the head, so it passes behind the chin) -->
+<path d="M200,24L452,292L200,486" fill="none" stroke="#d8fff0" stroke-width="2" stroke-linecap="round" filter="url(#elf-glow)"/>
+
+<!-- head: front-facing symmetric face (axis x=422) with two matching pointed ears, almond eyes, brows, nose, lips, circlet and a centre-parted fringe -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M386,180C352,160 322,140 290,128C312,150 340,186 372,208Z" fill="url(#elf-face)" stroke="url(#elf-edge)" stroke-width="1.8"/>
+ <path d="M458,180C492,160 522,140 554,128C532,150 504,186 472,208Z" fill="url(#elf-face)" stroke="url(#elf-edge)" stroke-width="1.8"/>
+ <path d="M378,180C354,166 334,152 312,142C330,162 350,184 374,198Z" fill="#e58a80" opacity=".25"/>
+ <path d="M466,180C490,166 510,152 532,142C514,162 494,184 470,198Z" fill="#e58a80" opacity=".25"/>
+ <path d="M422,126C394,126 380,150 382,176C383,200 386,222 394,240C400,256 410,266 422,270C434,266 444,256 450,240C458,222 461,200 462,176C464,150 450,126 422,126Z" fill="url(#elf-face)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M422,126C394,126 380,150 382,176C383,200 386,222 394,240C400,256 410,266 422,270C434,266 444,256 450,240C458,222 461,200 462,176C464,150 450,126 422,126Z" fill="url(#elf-faceshade)"/>
+ <path d="M386,172Q401,164 416,170M458,172Q443,164 428,170" fill="none" stroke="#2f3c3a" stroke-width="1.8"/>
+ <path d="M386,184Q401,174 416,184Q401,193 386,184Z" fill="#fff"/><circle cx="401" cy="184" r="4.2" fill="#2cd890" filter="url(#elf-glow)"/><circle cx="401" cy="184" r="1.6" fill="#05221a"/>
+ <path d="M458,184Q443,174 428,184Q443,193 458,184Z" fill="#fff"/><circle cx="443" cy="184" r="4.2" fill="#2cd890" filter="url(#elf-glow)"/><circle cx="443" cy="184" r="1.6" fill="#05221a"/>
+ <path d="M385,183Q401,172 417,183M459,183Q443,172 427,183" fill="none" stroke="#1c2624" stroke-width="2.4"/>
+ <path d="M422,192V207" fill="none" stroke="#fff2c8" stroke-opacity=".3" stroke-width="2"/>
+ <path d="M416,212Q422,218 428,212" fill="none" stroke="#a07e6e" stroke-width="1.8"/>
+ <path d="M411,240Q422,246 433,240" fill="none" stroke="#b05a58" stroke-width="2.4"/><path d="M415,243Q422,248 429,243" fill="none" stroke="#d98a86" stroke-opacity=".7" stroke-width="2"/>
+ <ellipse cx="397" cy="216" rx="9" ry="6" fill="#e58a80" opacity=".26"/><ellipse cx="447" cy="216" rx="9" ry="6" fill="#e58a80" opacity=".26"/>
+ <path d="M368,204C358,150 380,104 422,102C464,104 486,150 476,204C470,170 452,148 422,146C392,148 374,170 368,204Z" fill="url(#elf-hair)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M422,106C440,120 446,134 444,150M422,106C404,120 398,134 400,150" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="2"/>
+ <path d="M380,152C396,136 448,136 464,152" fill="none" stroke="url(#elf-gold)" stroke-width="3"/>
+ <path d="M422,130l8,12l-8,12l-8,-12z" fill="#5fffc0" stroke="url(#elf-gold)" stroke-width="2" filter="url(#elf-glow)"/>
+</g>
+
+<!-- draw arm (viewer right): upper arm raised out to the side, bracered forearm folded back to the anchor under the jaw -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M450,288C490,276 530,262 560,256C576,258 584,276 576,292C540,304 500,320 464,336Z" fill="url(#elf-skin)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M486,318C514,308 546,298 572,290" fill="none" stroke="#7a5a48" stroke-opacity=".35" stroke-width="2"/>
+ <path d="M444,286C462,268 492,266 510,274C500,292 482,304 462,314C452,308 446,298 444,286Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2.2"/>
+ <path d="M560,258C536,266 504,276 476,280C472,288 474,298 480,302C508,298 540,292 570,282C574,272 570,262 560,258Z" fill="url(#elf-skin)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M546,264C528,270 508,276 494,279C491,286 492,294 496,298C512,296 532,291 550,286C554,278 552,270 546,264Z" fill="url(#elf-plate)" stroke="url(#elf-edge)" stroke-width="2"/>
+ <path d="M528,270L531,293M510,275L512,296" stroke="url(#elf-gold)" stroke-width="1.8"/>
+ <path d="M490,282C512,276 538,268 560,260" fill="none" stroke="#fff2c8" stroke-opacity=".35" stroke-width="2"/>
+</g>
+
+<!-- bow: recurve limbs and grip (the string is drawn before the head) -->
+<g stroke-linejoin="round" stroke-linecap="round" fill="none">
+ <path d="M200,24C110,120 100,200 128,255C100,320 112,410 200,486" stroke="#1c120a" stroke-width="20"/>
+ <path d="M200,24C110,120 100,200 128,255C100,320 112,410 200,486" stroke="url(#elf-bow)" stroke-width="14"/>
+ <path d="M196,30C116,124 108,200 134,255C108,318 118,404 196,478" stroke="#f5d48a" stroke-opacity=".55" stroke-width="2"/>
+ <path d="M178,52C130,120 122,190 140,236M140,276C126,330 134,396 180,452" stroke="#5fffc0" stroke-opacity=".7" stroke-width="2" stroke-dasharray="2 12"/>
+ <path d="M200,24l14,-12l-2,20zM200,486l14,12l-2,-20z" fill="url(#elf-gold)" stroke="none"/>
+ <path d="M126,222C112,240 112,270 126,290" stroke="#3a2a16" stroke-width="22"/><path d="M126,222C112,240 112,270 126,290" stroke="url(#elf-gold)" stroke-width="3" stroke-dasharray="4 8"/>
+</g>
+<!-- arrow on the string, glowing head, fletching -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M452,292L74,256" stroke="#e8dcb8" stroke-width="3.2"/>
+ <path d="M44,257L84,244L78,257L84,270Z" fill="#9affd0" stroke="#fff" stroke-width="1.4" filter="url(#elf-glow)"/>
+ <path d="M446,291l-22,-11l7,11l-7,10z" fill="url(#elf-gold)" stroke="#fff2c8" stroke-opacity=".6"/><path d="M422,289l-22,-10l7,10l-7,9z" fill="#fff2c8" opacity=".85"/>
+</g>
+<!-- bow hand wrapped around the grip (fingers curl over it) and the drawing hand hooked on the string -->
+<g stroke-linejoin="round" stroke-linecap="round" fill="none">
+ <path d="M190,248C170,246 154,250 146,258C142,266 146,278 156,282C168,284 182,282 192,278Z" fill="#cfa88f" stroke="#7a5a48" stroke-opacity=".6" stroke-width="1.2"/>
+ <g><path d="M150,250C140,244 124,244 116,250" stroke="#7a5a48" stroke-opacity=".7" stroke-width="10"/><path d="M148,262C138,258 122,258 114,263" stroke="#7a5a48" stroke-opacity=".7" stroke-width="10"/><path d="M148,274C138,272 124,272 118,276" stroke="#7a5a48" stroke-opacity=".7" stroke-width="9"/>
+ <path d="M150,250C140,244 124,244 116,250" stroke="#d9b8a2" stroke-width="8"/><path d="M148,262C138,258 122,258 114,263" stroke="#cfa88f" stroke-width="8"/><path d="M148,274C138,272 124,272 118,276" stroke="#c49d88" stroke-width="7"/></g>
+ <path d="M184,244C170,236 154,232 142,238C136,242 142,248 152,246C164,246 176,250 186,252Z" fill="#d9b8a2" stroke="#7a5a48" stroke-opacity=".6" stroke-width="1.2"/>
+ <path d="M466,284C458,278 446,280 442,288C440,296 444,306 454,310C462,312 472,306 474,298Z" fill="#d9b8a2" stroke="#7a5a48" stroke-opacity=".6" stroke-width="1.2"/>
+ <path d="M454,286C444,280 434,284 432,291" stroke="#7a5a48" stroke-opacity=".7" stroke-width="8"/><path d="M452,298C442,296 434,300 434,306" stroke="#7a5a48" stroke-opacity=".7" stroke-width="8"/>
+ <path d="M454,286C444,280 434,284 432,291" stroke="#d9b8a2" stroke-width="6"/><path d="M452,298C442,296 434,300 434,306" stroke="#d9b8a2" stroke-width="6"/>
+</g>
+
+<!-- drifting nature-light motes and leaves -->
+<g filter="url(#elf-glow)" fill="#9affd0"><use href="#elf-leaf" transform="translate(60 210) rotate(-30) scale(.6)"/><use href="#elf-leaf" transform="translate(110 530) rotate(40) scale(.5)"/><use href="#elf-leaf" transform="translate(300 120) rotate(100) scale(.45)"/><use href="#elf-leaf" transform="translate(660 330) rotate(-60) scale(.55)"/></g>
+<g fill="#bfffe0" opacity=".9"><circle cx="56" cy="330" r="3"/><circle cx="260" cy="60" r="2.4"/><circle cx="700" cy="250" r="2.6"/><circle cx="90" cy="620" r="3.2"/><circle cx="690" cy="520" r="2.6"/><circle cx="730" cy="700" r="2.2"/><circle cx="640" cy="160" r="2"/></g>
+</svg>

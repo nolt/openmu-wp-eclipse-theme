@@ -1,0 +1,14 @@
+<!-- Ornament: top-left panel corner (filigree angle with a small jewel). 96x96; mirror with CSS transform for the other corners. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" aria-hidden="true">
+<defs><linearGradient id="co-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset=".5" stop-color="#e8b75a"/><stop offset="1" stop-color="#e8b75a" stop-opacity="0"/></linearGradient></defs>
+<g fill="none" stroke="url(#co-g)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2,94V16Q2,2 16,2H94" stroke-width="2"/>
+<path d="M10,70V24Q10,10 24,10H70" stroke-width="1" opacity=".7"/>
+<path d="M2,46l8,-6M46,2l-6,8" stroke-width="1.2"/>
+<path d="M24,24l16,0l8,8M24,24l0,16l8,8" stroke-width="1.4"/>
+<path d="M28,2v6M2,28h6" stroke-width="1.2" opacity=".7"/>
+</g>
+<path d="M16,16l7,7l-7,7l-7,-7z" fill="#1a0c0c" stroke="#f5d48a" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M16,20l3,3l-3,3l-3,-3z" fill="#ff6a3d"/>
+<g fill="#e8b75a"><circle cx="58" cy="2" r="1.6"/><circle cx="2" cy="58" r="1.6"/></g>
+</svg>

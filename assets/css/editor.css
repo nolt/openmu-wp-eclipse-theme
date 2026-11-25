@@ -1,0 +1,18 @@
+/*
+ * OpenMU Eclipse - editor stylesheet: gives the block editor the theme's look (dark page,
+ * gold links, glass panels). The theme.json presets (fonts, colours) already apply in
+ * the editor; this file only adds what theme.json cannot express.
+ */
+.editor-styles-wrapper { background: #07080d; }
+.editor-styles-wrapper .is-style-oe-glass,
+.editor-styles-wrapper .is-style-mu-window,
+.editor-styles-wrapper .is-style-oe-card,
+.editor-styles-wrapper .oe-panel {
+	background: linear-gradient(160deg, rgba(24, 28, 44, 0.9), rgba(10, 12, 20, 0.92));
+	border: 1px solid rgba(232, 183, 90, 0.22);
+	padding: 1.5rem;
+}
+.editor-styles-wrapper .oe-hero__title { color: #f5d48a; background: none; -webkit-text-fill-color: initial; text-transform: uppercase; }
+.editor-styles-wrapper .oe-hero { min-height: 30rem; }
+.editor-styles-wrapper .oe-section { padding-block: 3rem; }
+.editor-styles-wrapper .oe-scene { position: relative; min-height: 14rem; }

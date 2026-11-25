@@ -1,0 +1,22 @@
+/*
+Theme Name: OpenMU Eclipse
+Theme URI: https://github.com/nolt/openmu-wp-eclipse-theme
+Author: Nolt
+Author URI: https://github.com/nolt
+Description: A dark high-fantasy block theme for OpenMU (MU Online server emulator) websites. An animated eclipse scene, a three-class showcase, a glassy sticky header and ready-made pages for news, download, ranking, mini games, armory, events and commands. Styles the blocks of the OpenMU WP Connect plugin. All graphics are original.
+Version: 0.1.0
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 8.1
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: openmu-eclipse
+Domain Path: /languages
+Tags: block-patterns, block-styles, custom-colors, custom-logo, editor-style, featured-images, full-site-editing, wide-blocks, translation-ready, blog, entertainment
+
+OpenMU Eclipse, Copyright 2026 Nolt. Distributed under the terms of the GNU GPL v2 or later.
+
+This file only carries the theme header WordPress reads. All styling lives in
+theme.json and assets/css/ (loaded by inc/assets.php), so the editor and the
+front end share one source.
+*/

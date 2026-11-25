@@ -1,0 +1,15 @@
+<!-- Ornament: horizontal section divider. Thin gold lines tapering toward a central jewel with small diamonds. 600x24, scales in width. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 24" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<defs>
+<linearGradient id="dv-l" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e8b75a" stop-opacity="0"/><stop offset="1" stop-color="#f5d48a"/></linearGradient>
+<linearGradient id="dv-r" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#e8b75a" stop-opacity="0"/><stop offset="1" stop-color="#f5d48a"/></linearGradient>
+<filter id="dv-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2"/></filter>
+</defs>
+<path d="M20,12H262" stroke="url(#dv-l)" stroke-width="1.2"/><path d="M338,12H580" stroke="url(#dv-r)" stroke-width="1.2"/>
+<path d="M110,9H250l8,3l-8,3H110" fill="none" stroke="#e8b75a" stroke-opacity=".35" stroke-width=".8" stroke-linejoin="round"/>
+<path d="M490,9H350l-8,3l8,3H490" fill="none" stroke="#e8b75a" stroke-opacity=".35" stroke-width=".8" stroke-linejoin="round"/>
+<g fill="#e8b75a"><path d="M268,12l4,-4l4,4l-4,4z"/><path d="M324,12l4,-4l4,4l-4,4z"/><path d="M92,12l3,-3l3,3l-3,3z" opacity=".7"/><path d="M502,12l3,-3l3,3l-3,3z" opacity=".7"/></g>
+<path d="M300,2l10,10l-10,10l-10,-10z" fill="#f5d48a" opacity=".6" filter="url(#dv-glow)"/>
+<path d="M300,2l10,10l-10,10l-10,-10z" fill="#1a0c0c" stroke="#f5d48a" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M300,7l5,5l-5,5l-5,-5z" fill="#ff6a3d"/>
+</svg>

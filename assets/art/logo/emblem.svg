@@ -1,0 +1,18 @@
+<!-- OpenMU Eclipse emblem: black sun with golden corona between two angular wings, a sword and a jewel beneath. Bold shapes so it reads at 32 px and 256 px. Transparent background. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="OpenMU Eclipse">
+<defs>
+<linearGradient id="em-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset=".45" stop-color="#e8b75a"/><stop offset="1" stop-color="#9a6a24"/></linearGradient>
+<linearGradient id="em-wing" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a5a1e"/><stop offset="1" stop-color="#f5d48a"/></linearGradient>
+<radialGradient id="em-halo"><stop offset=".45" stop-color="#f5d48a" stop-opacity=".85"/><stop offset=".62" stop-color="#e8b75a" stop-opacity=".35"/><stop offset="1" stop-color="#e8b75a" stop-opacity="0"/></radialGradient>
+<filter id="em-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+<!-- one wing, left side; mirrored for the right -->
+<g id="em-wingL"><path d="M104,112L10,52L34,84L6,92L36,116L14,134L50,148L40,172L84,160L104,138Z" fill="url(#em-wing)"/><path d="M104,118L34,84M100,130L36,118M96,142L50,148" stroke="#07080d" stroke-opacity=".55" stroke-width="2.2" fill="none"/></g>
+</defs>
+<circle cx="128" cy="118" r="78" fill="url(#em-halo)"/>
+<use href="#em-wingL"/><use href="#em-wingL" transform="translate(256 0) scale(-1 1)"/>
+<g stroke="#f5d48a" stroke-width="4" stroke-linecap="round"><path d="M128,20v20M128,196v0M60,50l12,14M196,50l-12,14M44,118h18M212,118h-18"/></g>
+<circle cx="128" cy="118" r="46" fill="#07080d" stroke="url(#em-gold)" stroke-width="7"/>
+<circle cx="128" cy="118" r="36" fill="none" stroke="#e8b75a" stroke-opacity=".5" stroke-width="1.5"/>
+<path d="M119,164h18v60l-9,22l-9,-22z" fill="#dbe6f4" stroke="#e8b75a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M104,162h48l-6,10h-36z" fill="url(#em-gold)"/>
+</svg>

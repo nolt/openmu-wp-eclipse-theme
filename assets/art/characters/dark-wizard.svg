@@ -1,0 +1,128 @@
+<!-- Dark Wizard: original full-body illustration (800x1200, transparent). Hooded arcane wizard in flowing indigo robes with gold trim, a staff topped by a glowing cyan orb, a floating rune sigil in the free hand and a rune circle underfoot. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-label="Dark Wizard">
+<defs>
+<linearGradient id="sm-robe" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="640" y2="0"><stop offset="0" stop-color="#0d1030"/><stop offset=".22" stop-color="#4350a8"/><stop offset=".45" stop-color="#232968"/><stop offset=".62" stop-color="#1a1f55"/><stop offset=".85" stop-color="#383a80"/><stop offset="1" stop-color="#6a5a6a"/></linearGradient>
+<linearGradient id="sm-robe2" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="640" y2="0"><stop offset="0" stop-color="#090b22"/><stop offset=".3" stop-color="#1c2058"/><stop offset=".55" stop-color="#0e1032"/><stop offset=".9" stop-color="#201f4c"/><stop offset="1" stop-color="#4a3f52"/></linearGradient>
+<linearGradient id="sm-edge" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="640" y2="0"><stop offset="0" stop-color="#5fd4ff" stop-opacity=".95"/><stop offset=".4" stop-color="#5fd4ff" stop-opacity=".1"/><stop offset=".62" stop-color="#f5d48a" stop-opacity=".15"/><stop offset="1" stop-color="#f5d48a"/></linearGradient>
+<linearGradient id="sm-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".7"/></linearGradient>
+<linearGradient id="sm-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset=".45" stop-color="#e8b75a"/><stop offset="1" stop-color="#8a5a1e"/></linearGradient>
+<linearGradient id="sm-wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#171009"/><stop offset=".5" stop-color="#4a3420"/><stop offset="1" stop-color="#1a110a"/></linearGradient>
+<radialGradient id="sm-orb" cx=".38" cy=".34" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#bfeeff"/><stop offset=".6" stop-color="#3fb4ee"/><stop offset="1" stop-color="#0d4a8a"/></radialGradient>
+<radialGradient id="sm-halo"><stop offset="0" stop-color="#5fd4ff" stop-opacity=".55"/><stop offset=".5" stop-color="#5fd4ff" stop-opacity=".16"/><stop offset="1" stop-color="#5fd4ff" stop-opacity="0"/></radialGradient>
+<radialGradient id="sm-aura" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#5a5cff" stop-opacity=".3"/><stop offset=".6" stop-color="#2c3aa0" stop-opacity=".1"/><stop offset="1" stop-color="#2c3aa0" stop-opacity="0"/></radialGradient>
+<radialGradient id="sm-eye"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#7fe0ff"/><stop offset="1" stop-color="#5fd4ff" stop-opacity="0"/></radialGradient>
+<filter id="sm-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="sm-blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+
+<!-- aura, rune circle on the ground -->
+<ellipse cx="400" cy="560" rx="400" ry="560" fill="url(#sm-aura)"/>
+<g transform="translate(405 1128)" fill="none" stroke="#5fd4ff" filter="url(#sm-glow)">
+ <ellipse rx="330" ry="50" stroke-opacity=".8" stroke-width="2"/>
+ <ellipse rx="296" ry="44" stroke-opacity=".5" stroke-width="1" stroke-dasharray="3 6"/>
+ <ellipse rx="236" ry="34" stroke-opacity=".7" stroke-width="1.5"/>
+ <g stroke-width="2" stroke-opacity=".9" stroke-linecap="round">
+  <path d="M-310,0l-8,-6v12zM-262,-18l6,-8M-262,18l6,8M-190,-26l0,-10M-190,26l0,10M-100,-32l-6,-9l12,0zM-100,32l-6,9l12,0zM100,-32l6,-9l-12,0zM100,32l6,9l-12,0zM190,-26l0,-10M190,26l0,10M262,-18l-6,-8M262,18l-6,8M310,0l8,-6v12z"/>
+ </g>
+</g>
+
+<!-- robe: back layer (dark flowing cloak behind) -->
+<path d="M352,300C318,380 300,520 262,700C236,820 208,980 176,1100L232,1116L262,1090L312,1124L372,1100L400,1128L428,1100L488,1124L538,1090L568,1116L624,1100C592,980 564,820 538,700C500,520 482,380 448,300Z" fill="url(#sm-robe2)" stroke="url(#sm-edge)" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- hood back + high pointed collar -->
+<path d="M400,92C346,108 322,170 330,236C332,262 346,282 364,292L300,318L342,280L282,264L338,258C324,232 318,200 322,168C330,120 362,90 400,92Z" fill="url(#sm-robe2)" stroke="url(#sm-edge)" stroke-width="2" stroke-linejoin="round" opacity=".0"/>
+<path d="M352,292L286,236L326,268L300,196L352,262Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M448,292L514,236L474,268L500,196L448,262Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- main robe body -->
+<path d="M358,300C338,360 342,440 354,520C340,640 296,820 238,1100L282,1090L308,1116L366,1090L400,1118L434,1090L492,1116L518,1090L562,1100C504,820 460,640 446,520C458,440 462,360 442,300Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2.4" stroke-linejoin="round"/>
+<!-- cloth folds -->
+<g fill="none" stroke-linecap="round">
+ <path d="M366,540C350,700 318,900 282,1088M392,560C386,720 372,920 366,1088M420,560C432,720 440,920 452,1088M434,540C450,700 482,900 518,1088" stroke="url(#sm-edge)" stroke-width="1.8" opacity=".75"/>
+ <path d="M340,640C324,780 300,930 268,1060" stroke="#fff" stroke-opacity=".12" stroke-width="10"/>
+ <path d="M500,700C520,800 548,900 576,1000" stroke="#f5d48a" stroke-opacity=".14" stroke-width="8"/>
+</g>
+<!-- front embroidered panel with gold trim -->
+<path d="M386,330L414,330L424,560L434,1096L400,1112L366,1096L376,560Z" fill="#0c0f2a" opacity=".6"/>
+<path d="M386,330L376,560L366,1096M414,330L424,560L434,1096" fill="none" stroke="url(#sm-gold)" stroke-width="3"/>
+<g stroke="#e8b75a" stroke-opacity=".8" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M400,620l9,14l-9,14l-9,-14zM400,780l9,14l-9,14l-9,-14zM400,940l9,14l-9,14l-9,-14z"/>
+ <path d="M400,660v90M400,820v90M396,1010h8M400,990v40"/>
+</g>
+<path d="M300,1070L330,1080M470,1080L500,1070" stroke="url(#sm-gold)" stroke-width="2.4"/>
+<!-- shadow toward the hem -->
+<rect x="160" y="900" width="520" height="230" fill="url(#sm-fade)" opacity=".35"/>
+
+<!-- mantle (shoulder cape) with gold trim and spiked rim -->
+<path d="M358,298C326,296 270,308 236,344L214,372L262,366L252,396L300,380L296,408L346,376C372,360 400,368 400,368C400,368 428,360 454,376L504,408L500,380L548,396L538,366L586,372L564,344C530,308 474,296 442,298C420,308 380,308 358,298Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M240,350C300,330 350,336 400,352C450,336 500,330 560,350" fill="none" stroke="url(#sm-gold)" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M232,360C262,356 290,372 296,402M568,360C538,356 510,372 504,402" fill="none" stroke="url(#sm-gold)" stroke-width="2" opacity=".7"/>
+<g filter="url(#sm-glow)"><path d="M400,356l12,16l-12,16l-12,-16z" fill="url(#sm-orb)" stroke="url(#sm-gold)" stroke-width="2"/></g>
+
+<!-- belt with pendant -->
+<path d="M346,512C380,524 420,524 454,512L456,540C420,552 380,552 344,540Z" fill="#171a42" stroke="url(#sm-gold)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M400,520l14,16l-14,16l-14,-16z" fill="url(#sm-gold)" stroke="#fff2c8" stroke-opacity=".6"/>
+<path d="M400,552V640M392,640l8,24l8,-24z" stroke="url(#sm-gold)" stroke-width="2.4" fill="#e8b75a"/>
+
+<!-- head: hood, shadowed face, glowing eyes -->
+<path d="M400,90C344,104 320,170 328,232C332,262 350,284 376,294L400,300L424,294C450,284 468,262 472,232C480,170 456,104 400,90Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="M400,70L372,122C384,112 392,108 400,108C408,108 416,112 428,122Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2" stroke-linejoin="round"/>
+<path d="M400,126C362,126 346,164 350,208C354,244 372,270 400,278C428,270 446,244 450,208C454,164 438,126 400,126Z" fill="#06070e"/>
+<path d="M360,236C372,262 388,274 400,278C412,274 428,262 440,236C428,254 414,262 400,262C386,262 372,254 360,236Z" fill="#c9a98a" opacity=".5"/>
+<path d="M350,212C362,254 384,276 400,280C416,276 438,254 450,212" fill="none" stroke="#f5d48a" stroke-opacity=".35" stroke-width="2"/>
+<path d="M366,196L388,204L388,212L366,206Z M434,196L412,204L412,212L434,206Z" fill="#bff0ff" filter="url(#sm-glow)"/>
+<ellipse cx="377" cy="205" rx="20" ry="10" fill="url(#sm-eye)" opacity=".8"/><ellipse cx="423" cy="205" rx="20" ry="10" fill="url(#sm-eye)" opacity=".8"/>
+<path d="M340,180C352,150 372,132 400,128" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="4"/>
+<path d="M334,236L372,256M466,236L428,256" stroke="url(#sm-gold)" stroke-width="2.2" opacity=".8"/>
+<path d="M400,100l7,14l-7,14l-7,-14z" fill="url(#sm-gold)"/>
+
+<!-- left arm (image left): wide sleeve, hand raised with floating sigil -->
+<path d="M346,312C300,322 268,372 252,446L246,480L170,548L226,566L258,538L284,500C296,450 316,412 350,388Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M254,452C240,430 228,410 224,386L252,372C264,396 280,420 296,432Z" fill="url(#sm-robe2)" stroke="url(#sm-edge)" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M170,548L226,566L258,538M250,486L172,552" fill="none" stroke="url(#sm-gold)" stroke-width="2.4" stroke-linejoin="round"/>
+<g stroke="#cdb08a" stroke-width="7.5" stroke-linecap="round" fill="none"><path d="M216,382L202,358M224,378L218,348M233,378L238,348M241,384L254,360M213,394L196,386"/></g><g stroke="#f5d48a" stroke-opacity=".5" stroke-width="1.2" stroke-linecap="round" fill="none"><path d="M216,382L202,358M233,378L238,348M241,384L254,360"/></g><ellipse cx="228" cy="390" rx="16" ry="13" fill="#cdb08a" stroke="#f5d48a" stroke-opacity=".6" stroke-width="1.5"/>
+<g transform="translate(222 306)" filter="url(#sm-glow)">
+ <circle r="46" fill="url(#sm-halo)"/>
+ <circle r="30" fill="none" stroke="#5fd4ff" stroke-width="2"/><circle r="22" fill="none" stroke="#bff0ff" stroke-width="1.2" stroke-dasharray="3 4"/>
+ <g fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle r="13"/><path d="M0,-13v-7M0,13v7M-13,0h-7M13,0h7M-9,-9l-5,-5M9,9l5,5M-9,9l-5,5M9,-9l5,-5"/><path d="M-5,6l5,-12l5,12M-3,2h6"/></g>
+ <circle r="4" fill="#fff"/>
+</g>
+
+<!-- staff + orb (image right) -->
+<g stroke-linejoin="round">
+ <path d="M601,170L619,170L622,1150L598,1150Z" fill="url(#sm-wood)" stroke="url(#sm-edge)" stroke-width="1.6"/>
+ <g fill="url(#sm-gold)" stroke="#fff2c8" stroke-opacity=".5"><rect x="594" y="214" width="32" height="12" rx="3"/><rect x="596" y="650" width="28" height="10" rx="3"/><rect x="594" y="880" width="32" height="12" rx="3"/></g>
+ <path d="M610,178C566,176 538,142 548,96C556,122 572,138 592,142L588,120C590,150 600,166 610,172C620,166 630,150 632,120L628,142C648,138 664,122 672,96C682,142 654,176 610,178Z" fill="url(#sm-gold)" stroke="#fff2c8" stroke-opacity=".6" stroke-width="1.5"/>
+ <circle cx="610" cy="106" r="110" fill="url(#sm-halo)"/>
+ <circle cx="610" cy="108" r="42" fill="url(#sm-orb)" filter="url(#sm-glow)"/>
+ <path d="M584,92C592,78 606,72 620,76" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="4" stroke-linecap="round"/>
+ <g stroke="#fff" stroke-linecap="round" stroke-opacity=".8" fill="none"><path d="M610,40v-24M610,176v0M556,108h-26M664,108h26M572,70l-16,-16M648,70l16,-16" stroke-width="2"/></g>
+</g>
+<!-- right arm (image right): sleeve + hand around the staff -->
+<!-- same flared sleeve as the left arm (exact mirror around x=400) -->
+<path d="M454,312C500,322 532,372 548,446L554,480L630,548L574,566L542,538L516,500C504,450 484,412 450,388Z" fill="url(#sm-robe)" stroke="url(#sm-edge)" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M548,452C556,438 570,430 584,428L602,462L572,494C562,482 552,468 548,452Z" fill="url(#sm-robe2)" stroke="url(#sm-edge)" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M630,548L574,566L542,538M550,486L628,552" fill="none" stroke="url(#sm-gold)" stroke-width="2.4" stroke-linejoin="round"/>
+<!-- hand wrapped around the staff: palm, four curled fingers passing in front of the shaft, thumb over the top -->
+<g stroke-linejoin="round" stroke-linecap="round">
+ <path d="M572,486C568,462 576,442 594,436C604,432 612,436 612,446L612,486C602,498 584,500 572,486Z" fill="#cdb08a" stroke="#6b5136" stroke-opacity=".6" stroke-width="1.2"/>
+ <path d="M576,470C574,456 580,444 590,440" fill="none" stroke="#fff2c8" stroke-opacity=".45" stroke-width="3"/>
+ <g fill="none">
+  <path d="M598,440C612,434 628,438 632,448C634,454 628,456 624,452" stroke="#6b5136" stroke-opacity=".75" stroke-width="12"/>
+  <path d="M598,454C613,449 630,452 633,462C634,468 628,470 624,466" stroke="#6b5136" stroke-opacity=".75" stroke-width="12"/>
+  <path d="M598,468C612,464 628,466 631,476C632,482 626,484 622,480" stroke="#6b5136" stroke-opacity=".75" stroke-width="11"/>
+  <path d="M598,481C610,478 624,480 626,488C626,493 621,494 618,491" stroke="#6b5136" stroke-opacity=".75" stroke-width="9"/>
+  <path d="M598,440C612,434 628,438 632,448C634,454 628,456 624,452" stroke="#d6b995" stroke-width="10"/>
+  <path d="M598,454C613,449 630,452 633,462C634,468 628,470 624,466" stroke="#cdb08a" stroke-width="10"/>
+  <path d="M598,468C612,464 628,466 631,476C632,482 626,484 622,480" stroke="#c4a67f" stroke-width="9"/>
+  <path d="M598,481C610,478 624,480 626,488C626,493 621,494 618,491" stroke="#b99a74" stroke-width="7"/>
+  <path d="M602,438C614,434 626,437 630,444M602,452C616,448 628,450 631,458" stroke="#fff2c8" stroke-opacity=".5" stroke-width="1.6"/>
+ </g>
+ <path d="M580,452C586,432 604,424 620,430C626,433 624,440 618,440C606,438 596,444 592,458Z" fill="#d6b995" stroke="#6b5136" stroke-opacity=".6" stroke-width="1.2"/>
+</g>
+
+<!-- drifting runes and sparks -->
+<g fill="none" stroke="#5fd4ff" stroke-width="1.8" stroke-linecap="round" filter="url(#sm-glow)" opacity=".9">
+ <path d="M120,420l12,-12l12,12l-12,12zM150,230l8,0M154,226v8M690,310l8,12l-8,12l-8,-12zM70,640l12,0M76,634v12M720,640l10,-10M720,630l10,10M300,150l7,7l-7,7l-7,-7z"/>
+</g>
+</svg>

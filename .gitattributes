@@ -1,0 +1,4 @@
+# Files left out of release zips built with `git archive`.
+# The zip holds only what WordPress needs to run the theme; docs/ holds the README screenshots.
+.gitattributes export-ignore
+docs/ export-ignore

@@ -1,0 +1,676 @@
+/*
+ * OpenMU Eclipse - main stylesheet (front end; the editor loads editor.css, which imports the same tokens).
+ *
+ * Sections:
+ *  1. Tokens and base            6. Cards, panels, windows (glass look)
+ *  2. Icons                      7. Page heads and ornaments
+ *  3. Buttons and forms          8. News: query loop, single post, comments
+ *  4. Header and menu            9. Home sections (steps, call to action)
+ *  5. Footer                    10. Tables, commands, download, utilities
+ *
+ * Colours and fonts come from theme.json presets (--wp--preset--*); only values that
+ * theme.json cannot express live here. All motion respects prefers-reduced-motion.
+ */
+
+/* ---------- 1. Tokens and base ---------------------------------------- */
+
+:root {
+	/* Header height; the home hero is pulled up by this much so the glass header floats over the scene. */
+	--oe-header-h: 4.75rem;
+	--oe-gold: var(--wp--preset--color--gold);
+	--oe-gold-light: var(--wp--preset--color--gold-light);
+	--oe-line: rgba(232, 183, 90, 0.22);
+	--oe-line-strong: rgba(232, 183, 90, 0.5);
+	--oe-glass: linear-gradient(160deg, rgba(24, 28, 44, 0.78), rgba(10, 12, 20, 0.84));
+	--oe-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; overflow-x: clip; }
+html.oe-nav-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden; /* the scene layers are wider than the screen on purpose */
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+::selection { background: rgba(232, 183, 90, 0.35); color: #fff; }
+
+/* Keyboard focus is always visible, in the gold of the theme. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+	outline: 2px solid var(--oe-gold-light);
+	outline-offset: 3px;
+}
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px; height: 1px;
+	margin: -1px; padding: 0; overflow: hidden;
+	clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+/* Main content sits above the fixed ambient scene. */
+.wp-site-blocks { position: relative; z-index: 1; }
+.wp-site-blocks > main { min-height: 50vh; }
+
+/* Scrollbars in the theme's colours (where supported). */
+html { scrollbar-color: #3a3f55 #07080d; }
+
+/* ---------- 2. Icons --------------------------------------------------- */
+
+/* An icon is a mask of assets/art/icons/<name>.svg painted with the surrounding text colour. */
+.oe-icon {
+	display: inline-block;
+	flex: none;
+	width: 1.25em;
+	height: 1.25em;
+	background: currentColor;
+	-webkit-mask: var(--oe-i) center / contain no-repeat;
+	mask: var(--oe-i) center / contain no-repeat;
+	vertical-align: -0.25em;
+}
+.oe-icon--account { --oe-i: url(../art/icons/account.svg); }
+.oe-icon--armory { --oe-i: url(../art/icons/armory.svg); }
+.oe-icon--arrow-right { --oe-i: url(../art/icons/arrow-right.svg); }
+.oe-icon--check { --oe-i: url(../art/icons/check.svg); }
+.oe-icon--clock { --oe-i: url(../art/icons/clock.svg); }
+.oe-icon--close { --oe-i: url(../art/icons/close.svg); }
+.oe-icon--commands { --oe-i: url(../art/icons/commands.svg); }
+.oe-icon--crown { --oe-i: url(../art/icons/crown.svg); }
+.oe-icon--discord { --oe-i: url(../art/icons/discord.svg); }
+.oe-icon--download { --oe-i: url(../art/icons/download.svg); }
+.oe-icon--events { --oe-i: url(../art/icons/events.svg); }
+.oe-icon--menu { --oe-i: url(../art/icons/menu.svg); }
+.oe-icon--minigames { --oe-i: url(../art/icons/minigames.svg); }
+.oe-icon--news { --oe-i: url(../art/icons/news.svg); }
+.oe-icon--play { --oe-i: url(../art/icons/play.svg); }
+.oe-icon--ranking { --oe-i: url(../art/icons/ranking.svg); }
+.oe-icon--server { --oe-i: url(../art/icons/server.svg); }
+.oe-icon--shield { --oe-i: url(../art/icons/shield.svg); }
+.oe-icon--sword { --oe-i: url(../art/icons/sword.svg); }
+.oe-icon--user { --oe-i: url(../art/icons/user.svg); }
+/* Icon names used by page addresses that differ from the file name. */
+.oe-icon--mini-games { --oe-i: url(../art/icons/minigames.svg); }
+
+/* ---------- 3. Buttons and forms --------------------------------------- */
+
+.wp-element-button, .wp-block-button__link {
+	position: relative;
+	transition: transform 0.25s var(--oe-ease), box-shadow 0.25s var(--oe-ease), filter 0.25s;
+	box-shadow: 0 0 0 1px rgba(255, 224, 160, 0.4) inset, 0 6px 22px rgba(232, 183, 90, 0.18);
+	text-decoration: none;
+}
+.wp-element-button:hover, .wp-block-button__link:hover {
+	transform: translateY(-2px);
+	filter: brightness(1.08);
+	box-shadow: 0 0 0 1px rgba(255, 232, 180, 0.7) inset, 0 10px 34px rgba(232, 183, 90, 0.38);
+}
+.wp-block-button.is-style-outline .wp-block-button__link,
+.wp-block-button.is-style-oe-ghost .wp-block-button__link {
+	background: rgba(7, 8, 13, 0.35);
+	color: var(--oe-gold-light);
+	border: 1px solid var(--oe-line-strong);
+	box-shadow: none;
+	backdrop-filter: blur(6px);
+}
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-oe-ghost .wp-block-button__link:hover {
+	background: rgba(232, 183, 90, 0.12);
+	border-color: var(--oe-gold-light);
+	box-shadow: 0 0 24px rgba(232, 183, 90, 0.2);
+}
+.wp-block-button .oe-icon { margin-inline-end: 0.5em; vertical-align: -0.2em; }
+
+/* Text fields: dark, with a thin gold border that lights up on focus. */
+input[type="text"], input[type="search"], input[type="password"], input[type="email"],
+input[type="url"], input[type="number"], select, textarea {
+	background: rgba(5, 6, 10, 0.75);
+	color: var(--wp--preset--color--contrast);
+	border: 1px solid rgba(232, 183, 90, 0.3);
+	border-radius: 2px;
+	padding: 0.7rem 0.9rem;
+	font: inherit;
+	max-width: 100%;
+	transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+	outline: none;
+	border-color: var(--oe-gold-light);
+	box-shadow: 0 0 0 3px rgba(232, 183, 90, 0.2);
+}
+select option { background: #0d0f17; color: #ece7da; }
+button.wp-element-button, input[type="submit"] { cursor: pointer; }
+input[type="submit"] {
+	background: var(--wp--preset--gradient--gold-sheen); color: #1a1203; border: 0; border-radius: 2px;
+	font-family: var(--wp--preset--font-family--heading); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+	padding: 0.8em 1.7em;
+}
+.wp-block-search__inside-wrapper { gap: 0.5rem; }
+.wp-block-search__button { margin: 0; }
+::placeholder { color: #7d8296; opacity: 1; }
+
+/* ---------- 4. Header and menu ------------------------------------------ */
+
+/* The template part wrapper sticks to the top; below the admin bar when it is shown. */
+header.wp-block-template-part { position: sticky; top: 0; z-index: 100; }
+.admin-bar header.wp-block-template-part { top: 32px; }
+@media (max-width: 782px) { .admin-bar header.wp-block-template-part { top: 46px; } }
+
+.oe-header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	min-height: var(--oe-header-h);
+	padding-block: 0.5rem;
+	transition: min-height 0.3s var(--oe-ease);
+}
+/* The glass is a pseudo-element: backdrop-filter on the header itself would trap the fixed phone menu inside it. */
+.oe-header::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: linear-gradient(180deg, rgba(7, 8, 13, 0.72), rgba(7, 8, 13, 0.38));
+	-webkit-backdrop-filter: blur(14px) saturate(1.4);
+	backdrop-filter: blur(14px) saturate(1.4);
+	border-bottom: 1px solid rgba(232, 183, 90, 0.16);
+	transition: background 0.3s;
+}
+/* A thin gold hairline that fades out to the edges. */
+.oe-header::after {
+	content: "";
+	position: absolute;
+	inset: auto 0 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, rgba(245, 212, 138, 0.55), transparent);
+	opacity: 0.6;
+}
+.oe-header.is-compact { min-height: 3.6rem; }
+.oe-header.is-compact::before { background: rgba(7, 8, 13, 0.88); }
+.oe-header.is-compact .oe-brand img { width: 30px; height: 30px; }
+
+.oe-brand { display: flex; align-items: center; gap: 0.75rem; margin: 0; flex: none; }
+.oe-brand .wp-block-image { margin: 0; line-height: 0; }
+.oe-brand img { width: 40px; height: 40px; transition: width 0.3s var(--oe-ease), height 0.3s var(--oe-ease); filter: drop-shadow(0 0 8px rgba(232, 183, 90, 0.45)); }
+.oe-brand .wp-block-site-title { margin: 0; font-size: clamp(1rem, 2.4vw, 1.3rem); line-height: 1; }
+.oe-brand .wp-block-site-title a { color: var(--oe-gold-light); text-decoration: none; }
+
+.oe-nav { margin-inline-start: auto; }
+.oe-nav__toggle { display: none; }
+.oe-nav__panel { display: flex; align-items: center; gap: 1.25rem; }
+.oe-nav__list { display: flex; align-items: center; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
+.oe-nav__item { position: relative; margin: 0; }
+.oe-nav__link {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.7rem 0.85rem;
+	background: none;
+	border: 0;
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+/* A small diamond under the current item and on hover. */
+.oe-nav__link::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: 0.15rem;
+	width: 6px;
+	height: 6px;
+	background: var(--oe-gold);
+	transform: translateX(-50%) rotate(45deg) scale(0);
+	box-shadow: 0 0 10px var(--oe-gold);
+	transition: transform 0.25s var(--oe-ease);
+}
+.oe-nav__link:hover, .oe-nav__item.is-current > .oe-nav__link, .oe-nav__item.is-open > .oe-nav__link { color: var(--oe-gold-light); }
+.oe-nav__link:hover::after, .oe-nav__item.is-current > .oe-nav__link::after { transform: translateX(-50%) rotate(45deg) scale(1); }
+.oe-nav__caret { width: 0.45rem; height: 0.45rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform 0.25s; }
+.oe-nav__item.is-open .oe-nav__caret { transform: rotate(225deg); }
+
+/* Submenu: a glass panel under the parent item. Hover (mouse), focus-within (keyboard) and .is-open (touch/click). */
+.oe-nav__sub {
+	position: absolute;
+	top: calc(100% + 0.4rem);
+	left: 50%;
+	min-width: 13rem;
+	margin: 0;
+	padding: 0.5rem;
+	list-style: none;
+	background: linear-gradient(160deg, rgba(22, 26, 42, 0.96), rgba(9, 11, 18, 0.97));
+	border: 1px solid var(--oe-line-strong);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(232, 183, 90, 0.08);
+	opacity: 0;
+	visibility: hidden;
+	transform: translate(-50%, 8px);
+	transition: opacity 0.2s, transform 0.25s var(--oe-ease), visibility 0s 0.25s;
+}
+.oe-nav__sub::before { content: ""; position: absolute; left: 0; right: 0; top: -0.5rem; height: 0.5rem; } /* hover bridge over the gap */
+.oe-nav__item.is-open > .oe-nav__sub,
+.oe-nav__item--parent:focus-within > .oe-nav__sub {
+	opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: 0s;
+}
+@media (hover: hover) {
+	.oe-nav__item--parent:hover > .oe-nav__sub { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: 0s; }
+}
+.oe-nav__sublink {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	padding: 0.65rem 0.8rem;
+	color: var(--wp--preset--color--contrast);
+	font-size: 0.95rem;
+	text-decoration: none;
+	border-left: 2px solid transparent;
+	transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.oe-nav__sublink .oe-icon { color: var(--oe-gold); }
+.oe-nav__sublink:hover, .oe-nav__sublink.is-current { background: rgba(232, 183, 90, 0.1); border-left-color: var(--oe-gold); color: var(--oe-gold-light); }
+
+.oe-nav__play { margin-inline-start: 0.5rem; padding: 0.65em 1.4em !important; font-size: 0.82rem !important; text-decoration: none; white-space: nowrap; }
+
+/* Phones: a burger button and a full-screen menu. */
+@media (max-width: 900px) {
+	.oe-nav__toggle {
+		display: inline-flex; align-items: center; justify-content: center;
+		width: 2.9rem; height: 2.9rem; padding: 0;
+		background: rgba(232, 183, 90, 0.08); border: 1px solid var(--oe-line-strong); color: var(--oe-gold-light);
+		position: relative; z-index: 3; cursor: pointer;
+	}
+	.oe-nav__burger { position: relative; width: 20px; height: 14px; }
+	.oe-nav__burger span { position: absolute; left: 0; width: 100%; height: 2px; background: currentColor; transition: transform 0.3s var(--oe-ease), opacity 0.2s, top 0.3s var(--oe-ease); }
+	.oe-nav__burger span:nth-child(1) { top: 0; }
+	.oe-nav__burger span:nth-child(2) { top: 6px; }
+	.oe-nav__burger span:nth-child(3) { top: 12px; }
+	.oe-nav.is-open .oe-nav__burger span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+	.oe-nav.is-open .oe-nav__burger span:nth-child(2) { opacity: 0; }
+	.oe-nav.is-open .oe-nav__burger span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+	.oe-nav__panel {
+		position: fixed; inset: 0; z-index: 2;
+		flex-direction: column; align-items: stretch; justify-content: center; gap: 1.5rem;
+		padding: 5.5rem 1.75rem 2rem;
+		background:
+			radial-gradient(60% 40% at 80% 0%, rgba(232, 183, 90, 0.16), transparent 70%),
+			rgba(6, 7, 12, 0.99);
+		overflow-y: auto;
+		opacity: 0; visibility: hidden; transform: translateY(-12px);
+		transition: opacity 0.3s, transform 0.35s var(--oe-ease), visibility 0s 0.35s;
+	}
+	.oe-nav.is-open .oe-nav__panel { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+	.oe-nav__list { flex-direction: column; align-items: stretch; gap: 0; }
+	.oe-nav__item { border-bottom: 1px solid rgba(232, 183, 90, 0.12); }
+	.oe-nav__link { width: 100%; justify-content: space-between; padding: 1rem 0.25rem; font-size: 1.15rem; }
+	.oe-nav__link::after { display: none; }
+	.oe-nav__sub {
+		position: static; display: none; min-width: 0; padding: 0 0 0.6rem 0.5rem; background: none; border: 0; box-shadow: none;
+		opacity: 1; visibility: visible; transform: none; transition: none;
+	}
+	.oe-nav__item.is-open > .oe-nav__sub { display: block; }
+	.oe-nav__item--parent:focus-within > .oe-nav__sub { display: none; }
+	.oe-nav__item--parent.is-open:focus-within > .oe-nav__sub { display: block; }
+	/* The desktop open-state rules centre the dropdown with a transform; in the phone menu the list is static. */
+	.oe-nav__item.is-open > .oe-nav__sub, .oe-nav__item--parent:focus-within > .oe-nav__sub, .oe-nav__item--parent:hover > .oe-nav__sub { transform: none; opacity: 1; visibility: visible; }
+	.oe-nav__sub::before { display: none; }
+	.oe-nav__sublink { padding: 0.8rem 0.5rem; font-size: 1.05rem; }
+	.oe-nav__play { align-self: stretch; text-align: center; margin: 0; padding: 0.9em 1.4em !important; font-size: 0.95rem !important; }
+	.oe-header { gap: 0.75rem; }
+}
+/* Without JavaScript the phone menu cannot be opened: show the list inline instead. */
+html:not(.oe-js) .oe-nav__toggle { display: none; }
+@media (max-width: 900px) {
+	html:not(.oe-js) .oe-nav__panel { position: static; opacity: 1; visibility: visible; transform: none; padding: 0.5rem 0; background: none; flex-direction: row; flex-wrap: wrap; }
+	html:not(.oe-js) .oe-header { flex-wrap: wrap; }
+	html:not(.oe-js) .oe-nav__sub { display: block; }
+}
+
+/* ---------- 5. Footer ---------------------------------------------------- */
+
+.oe-footer { position: relative; margin-top: var(--wp--preset--spacing--70); padding-top: var(--wp--preset--spacing--60); background: linear-gradient(180deg, transparent, rgba(5, 6, 10, 0.92) 18%); }
+.oe-footer::before {
+	content: "";
+	position: absolute; left: 0; right: 0; top: 0; height: 1px;
+	background: linear-gradient(90deg, transparent, var(--oe-line-strong), transparent);
+}
+.oe-footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; }
+@media (max-width: 900px) { .oe-footer__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .oe-footer__grid { grid-template-columns: 1fr; gap: 2rem; } }
+.oe-footer__brand { display: flex; align-items: center; gap: 0.75rem; margin-block-end: 1rem; }
+.oe-footer__brand img { width: 44px; height: 44px; }
+.oe-footer__brand .wp-block-site-title { margin: 0; font-size: 1.2rem; }
+.oe-footer__brand .wp-block-site-title a { color: var(--oe-gold-light); text-decoration: none; }
+.oe-footer h2, .oe-footer h3 { font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oe-gold); margin: 0 0 1rem; }
+.oe-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.oe-footer a { color: var(--wp--preset--color--muted); text-decoration: none; transition: color 0.2s; }
+.oe-footer a:hover { color: var(--oe-gold-light); }
+.oe-footer p { color: var(--wp--preset--color--muted); font-size: 0.95rem; }
+.oe-footer__bottom { margin-top: 3rem; padding-block: 1.5rem; border-top: 1px solid rgba(232, 183, 90, 0.12); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 2rem; font-size: 0.82rem; color: #8a8fa3; }
+.oe-footer__bottom p { margin: 0; font-size: inherit; color: inherit; }
+
+/* ---------- 6. Cards, panels, windows ----------------------------------- */
+
+/* Shared glass panel: used by the group styles "Glass panel", "Window" (plugin), "Card" and the home panels. */
+.is-style-oe-glass, .is-style-mu-window, .is-style-oe-card, .oe-panel {
+	position: relative;
+	background: var(--oe-glass);
+	border: 1px solid var(--oe-line);
+	border-radius: 3px;
+	box-shadow: var(--wp--preset--shadow--glow);
+	padding: clamp(1.25rem, 3vw, 2rem);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+}
+/* Gold corner brackets on the top-left and bottom-right: thin line work, drawn with gradients. */
+.is-style-oe-glass::before, .is-style-mu-window::before, .oe-panel::before,
+.is-style-oe-glass::after, .is-style-mu-window::after, .oe-panel::after {
+	content: "";
+	position: absolute;
+	width: 22px; height: 22px;
+	pointer-events: none;
+	border: 0 solid var(--oe-gold);
+	opacity: 0.85;
+}
+.is-style-oe-glass::before, .is-style-mu-window::before, .oe-panel::before { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
+.is-style-oe-glass::after, .is-style-mu-window::after, .oe-panel::after { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; }
+
+/* Window title (the plugin's events block uses .mu-window__title): Cinzel, gold, with a diamond divider under it. */
+.mu-window__title {
+	position: relative;
+	margin: 0 0 1.4rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	color: var(--oe-gold-light);
+	font-size: 1.25rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+.mu-window__title::after {
+	content: "";
+	position: absolute; left: 50%; bottom: 0;
+	width: min(14rem, 70%); height: 7px;
+	transform: translateX(-50%);
+	background:
+		linear-gradient(var(--oe-gold), var(--oe-gold)) left center / calc(50% - 10px) 1px no-repeat,
+		linear-gradient(var(--oe-gold), var(--oe-gold)) right center / calc(50% - 10px) 1px no-repeat;
+}
+.mu-window__title::before {
+	content: "";
+	position: absolute; left: 50%; bottom: 0; width: 7px; height: 7px;
+	transform: translateX(-50%) rotate(45deg);
+	background: var(--oe-gold); box-shadow: 0 0 10px var(--oe-gold);
+}
+
+/* ---------- 7. Page heads and ornaments ---------------------------------- */
+
+/* The banner at the top of every subpage: eyebrow with icon, title, lead, ornament line. */
+.oe-pagehead { position: relative; padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem); text-align: center; }
+.oe-pagehead__eyebrow {
+	display: inline-flex; align-items: center; gap: 0.6rem;
+	margin: 0 0 0.9rem;
+	color: var(--oe-gold);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 0.82rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase;
+}
+.oe-pagehead__eyebrow::before, .oe-pagehead__eyebrow::after { content: ""; width: 2.2rem; height: 1px; background: linear-gradient(90deg, transparent, var(--oe-gold)); }
+.oe-pagehead__eyebrow::after { transform: scaleX(-1); }
+.oe-pagehead .wp-block-post-title, .oe-pagehead h1 {
+	margin: 0; font-size: clamp(2.2rem, 6vw, 3.8rem);
+	background: linear-gradient(180deg, #fff6dc 0%, var(--oe-gold-light) 45%, #c4903a 100%);
+	-webkit-background-clip: text; background-clip: text; color: transparent;
+	filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.6));
+}
+.oe-pagehead__lead { max-width: 40rem; margin: 1.1rem auto 0; color: var(--wp--preset--color--muted); font-size: 1.1rem; }
+.oe-orn {
+	position: relative; height: 12px; margin: 1.6rem auto 0; max-width: 22rem;
+	background:
+		linear-gradient(90deg, transparent, var(--oe-gold)) left center / calc(50% - 14px) 1px no-repeat,
+		linear-gradient(270deg, transparent, var(--oe-gold)) right center / calc(50% - 14px) 1px no-repeat;
+}
+.oe-orn::before { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%) rotate(45deg); background: var(--oe-gold); box-shadow: 0 0 12px var(--oe-gold), 0 0 0 4px rgba(7, 8, 13, 0.9), 0 0 0 5px var(--oe-gold); }
+
+/* Section heading style "Ornate": centred with the diamond divider below. */
+.wp-block-heading.is-style-oe-ornate { text-align: center; position: relative; padding-bottom: 1.6rem; }
+.wp-block-heading.is-style-oe-ornate::after {
+	content: ""; position: absolute; left: 50%; bottom: 0; width: 12rem; height: 9px; transform: translateX(-50%);
+	background:
+		linear-gradient(90deg, transparent, var(--oe-gold)) left center / calc(50% - 12px) 1px no-repeat,
+		linear-gradient(270deg, transparent, var(--oe-gold)) right center / calc(50% - 12px) 1px no-repeat;
+}
+.wp-block-heading.is-style-oe-ornate::before { content: ""; position: absolute; left: 50%; bottom: 0; width: 7px; height: 7px; transform: translateX(-50%) rotate(45deg); background: var(--oe-gold); box-shadow: 0 0 10px var(--oe-gold); }
+
+/* A section: generous vertical rhythm, with a small eyebrow label above the heading. */
+.oe-section { padding-block: var(--wp--preset--spacing--70); }
+.oe-eyebrow { margin: 0 0 0.6rem; text-align: center; color: var(--oe-gold); font-family: var(--wp--preset--font-family--heading); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; }
+.oe-section__lead { max-width: 38rem; margin-inline: auto; text-align: center; color: var(--wp--preset--color--muted); }
+
+/* ---------- 8. News: query loop, single post, comments ------------------- */
+
+.oe-posts .wp-block-post-template { gap: 1.75rem; }
+.oe-card {
+	position: relative; display: flex; flex-direction: column; height: 100%;
+	background: var(--oe-glass); border: 1px solid var(--oe-line); overflow: hidden;
+	transition: transform 0.35s var(--oe-ease), border-color 0.3s, box-shadow 0.35s;
+}
+.oe-card:hover { transform: translateY(-4px); border-color: var(--oe-line-strong); box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 36px rgba(232, 183, 90, 0.12); }
+.oe-card .wp-block-post-featured-image { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; }
+.oe-card .wp-block-post-featured-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--oe-ease); }
+.oe-card:hover .wp-block-post-featured-image img { transform: scale(1.05); }
+/* Posts without a featured image get a dark banner with a faint eclipse and the emblem mark. */
+.oe-card:not(:has(.wp-block-post-featured-image))::before {
+	content: ""; display: block; aspect-ratio: 16 / 10;
+	background:
+		radial-gradient(circle at 70% 38%, #000 0 11%, rgba(245, 212, 138, 0.85) 11.5%, rgba(232, 183, 90, 0.25) 17%, transparent 34%),
+		radial-gradient(120% 90% at 20% 110%, rgba(194, 54, 47, 0.35), transparent 60%),
+		linear-gradient(180deg, #151a2b, #090b13);
+}
+.oe-card__body { display: flex; flex-direction: column; gap: 0.7rem; flex: 1; padding: 1.35rem 1.5rem 1.5rem; }
+.oe-card__meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin: 0; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--oe-gold); }
+.oe-card__meta a { color: inherit; text-decoration: none; }
+.oe-card .wp-block-post-title { margin: 0; font-size: 1.3rem; line-height: 1.25; }
+.oe-card .wp-block-post-title a { color: var(--wp--preset--color--contrast); text-decoration: none; }
+.oe-card .wp-block-post-title a:hover { color: var(--oe-gold-light); }
+.oe-card .wp-block-post-excerpt { margin: 0; color: var(--wp--preset--color--muted); font-size: 0.97rem; }
+.oe-card .wp-block-post-excerpt__more-link { display: inline-block; margin-top: 0.6rem; font-family: var(--wp--preset--font-family--heading); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+.oe-card .wp-block-post-excerpt__more-link::after { content: " \2192"; }
+
+.wp-block-query-pagination { gap: 0.5rem; justify-content: center; margin-top: 2.5rem; font-family: var(--wp--preset--font-family--heading); font-size: 0.9rem; letter-spacing: 0.08em; }
+.wp-block-query-pagination a, .wp-block-query-pagination .page-numbers { padding: 0.55rem 0.95rem; border: 1px solid var(--oe-line); text-decoration: none; color: var(--wp--preset--color--contrast); background: rgba(10, 12, 20, 0.6); }
+.wp-block-query-pagination a:hover { border-color: var(--oe-gold); color: var(--oe-gold-light); }
+.wp-block-query-pagination .page-numbers.current { border-color: var(--oe-gold); background: rgba(232, 183, 90, 0.15); color: var(--oe-gold-light); }
+.wp-block-query-pagination-numbers { display: flex; gap: 0.4rem; }
+
+/* Single post: header, readable column, boxed content. */
+.oe-single__meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.25rem; margin-top: 1.2rem; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wp--preset--color--muted); }
+.oe-single__meta a { color: var(--oe-gold); text-decoration: none; }
+.oe-single__cover { margin: 0 auto 2.5rem; border: 1px solid var(--oe-line); box-shadow: var(--wp--preset--shadow--deep); }
+.oe-single__cover img { display: block; width: 100%; height: auto; }
+.oe-prose { background: var(--oe-glass); border: 1px solid var(--oe-line); padding: clamp(1.25rem, 4vw, 3rem); backdrop-filter: blur(6px); }
+.oe-prose > :first-child { margin-top: 0; }
+.oe-prose > :last-child { margin-bottom: 0; }
+.oe-prose .wp-block-heading { margin-top: 2.2rem; }
+.oe-prose blockquote, .wp-block-quote { border-left: 3px solid var(--oe-gold); margin-inline: 0; padding: 0.4rem 0 0.4rem 1.4rem; font-style: italic; color: var(--oe-gold-light); }
+.oe-prose img { height: auto; }
+.oe-prose hr, .wp-block-separator { border: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--oe-line-strong), transparent); }
+.oe-postnav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; font-family: var(--wp--preset--font-family--heading); font-size: 0.9rem; }
+.oe-postnav a { text-decoration: none; }
+.wp-block-post-terms a { text-decoration: none; }
+.oe-tags { margin-top: 2rem; font-size: 0.9rem; }
+.oe-tags a { display: inline-block; margin: 0 0.3rem 0.3rem 0; padding: 0.2rem 0.7rem; border: 1px solid var(--oe-line); text-decoration: none; color: var(--wp--preset--color--muted); }
+.oe-tags a:hover { color: var(--oe-gold-light); border-color: var(--oe-gold); }
+
+.wp-block-comments { margin-top: 3rem; }
+.wp-block-comment-template { padding: 0; list-style: none; }
+.wp-block-comment-template li { padding: 1.2rem 1.4rem; margin-bottom: 1rem; background: rgba(10, 12, 20, 0.6); border: 1px solid var(--oe-line); }
+.wp-block-comments .comment-form input[type="text"], .wp-block-comments .comment-form input[type="email"], .wp-block-comments .comment-form input[type="url"], .wp-block-comments .comment-form textarea { width: 100%; }
+.wp-block-comment-author-name a { text-decoration: none; }
+.wp-block-comment-date, .wp-block-comment-edit-link, .wp-block-comment-reply-link { font-size: 0.8rem; }
+
+/* ---------- 9. Home sections: steps, call to action ---------------------- */
+
+.oe-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin: 3rem 0 0; padding: 0; list-style: none; counter-reset: oe-step; }
+@media (max-width: 900px) { .oe-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .oe-steps { grid-template-columns: 1fr; } }
+.oe-step {
+	position: relative; counter-increment: oe-step;
+	padding: 2.6rem 1.4rem 1.6rem; text-align: center;
+	background: var(--oe-glass); border: 1px solid var(--oe-line);
+	transition: transform 0.3s var(--oe-ease), border-color 0.3s;
+}
+.oe-step:hover { transform: translateY(-4px); border-color: var(--oe-line-strong); }
+/* The number sits on the top edge as a jewel. */
+.oe-step::before {
+	content: counter(oe-step);
+	position: absolute; left: 50%; top: 0; width: 2.6rem; height: 2.6rem;
+	display: grid; place-items: center; transform: translate(-50%, -50%) rotate(45deg);
+	background: #0b0d16; border: 1px solid var(--oe-gold); box-shadow: 0 0 18px rgba(232, 183, 90, 0.35);
+}
+.oe-step::after { content: counter(oe-step); position: absolute; left: 50%; top: 0; transform: translate(-50%, -50%); font-family: var(--wp--preset--font-family--heading); font-weight: 800; color: var(--oe-gold-light); }
+.oe-step .oe-icon { width: 2.1rem; height: 2.1rem; margin-bottom: 0.9rem; color: var(--oe-gold); filter: drop-shadow(0 0 8px rgba(232, 183, 90, 0.4)); }
+.oe-step h3 { margin: 0 0 0.5rem; font-size: 1.1rem; letter-spacing: 0.06em; }
+.oe-step p { margin: 0; color: var(--wp--preset--color--muted); font-size: 0.95rem; }
+
+/* The closing call to action: a wide panel with a glowing eclipse behind the text. */
+.oe-cta {
+	position: relative; overflow: hidden; isolation: isolate; text-align: center;
+	padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+	background: linear-gradient(160deg, rgba(26, 31, 49, 0.9), rgba(8, 9, 15, 0.95));
+	border: 1px solid var(--oe-line-strong); box-shadow: var(--wp--preset--shadow--glow);
+}
+.oe-cta::before {
+	content: ""; position: absolute; z-index: -1; left: 50%; top: -40%; width: 60rem; max-width: 140%; aspect-ratio: 1;
+	transform: translateX(-50%);
+	background: radial-gradient(circle, #000 0 18%, rgba(255, 215, 140, 0.55) 19%, rgba(232, 183, 90, 0.18) 28%, transparent 52%);
+	animation: oe-corona 7s ease-in-out infinite;
+}
+.oe-cta h2 { margin: 0 0 0.8rem; }
+.oe-cta p { max-width: 34rem; margin-inline: auto; color: var(--wp--preset--color--contrast); }
+@keyframes oe-corona { 0%, 100% { opacity: 0.75; transform: translateX(-50%) scale(1); } 50% { opacity: 1; transform: translateX(-50%) scale(1.04); } }
+
+/* ---------- 10. Tables, commands, download, utilities -------------------- */
+
+.wp-block-table { overflow-x: auto; margin: 0; }
+.wp-block-table table, table { border-collapse: collapse; width: 100%; }
+.wp-block-table th, .wp-block-table td, .openmu-ranking th, .openmu-ranking td { border: 0; border-bottom: 1px solid rgba(232, 183, 90, 0.12); padding: 0.8rem 1rem; text-align: start; }
+.wp-block-table thead, .openmu-ranking thead { border-bottom: 1px solid var(--oe-line-strong); }
+.wp-block-table th {
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oe-gold);
+	background: rgba(232, 183, 90, 0.06);
+}
+.wp-block-table tbody tr:hover { background: rgba(232, 183, 90, 0.05); }
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) { background: rgba(255, 255, 255, 0.025); }
+code, kbd { font-family: var(--wp--preset--font-family--mono); font-size: 0.9em; color: var(--oe-gold-light); background: rgba(232, 183, 90, 0.1); padding: 0.15em 0.45em; border: 1px solid rgba(232, 183, 90, 0.2); }
+td code { white-space: nowrap; }
+
+/* Download options: a grid of cards, the first one highlighted. */
+.oe-downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
+.oe-download { display: flex; flex-direction: column; gap: 0.8rem; text-align: center; align-items: center; }
+.oe-download.is-featured { border-color: var(--oe-gold); box-shadow: 0 0 0 1px rgba(232, 183, 90, 0.4), 0 0 50px rgba(232, 183, 90, 0.16); }
+.oe-download .oe-icon { width: 2.6rem; height: 2.6rem; color: var(--oe-gold); filter: drop-shadow(0 0 10px rgba(232, 183, 90, 0.5)); }
+.oe-download h3 { margin: 0; font-size: 1.2rem; }
+.oe-download p { margin: 0; color: var(--wp--preset--color--muted); font-size: 0.95rem; }
+.oe-download .wp-block-buttons { margin-top: auto; padding-top: 0.6rem; }
+.oe-badge { display: inline-block; padding: 0.15rem 0.7rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #1a1203; background: var(--wp--preset--gradient--gold-sheen); font-weight: 700; }
+
+.oe-reqs { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.5rem; }
+.oe-reqs h3 { font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oe-gold); }
+.oe-reqs ul { margin: 0; padding-left: 1.1rem; color: var(--wp--preset--color--muted); }
+
+.oe-error { text-align: center; padding-block: clamp(3rem, 10vw, 7rem); }
+.oe-error__code { margin: 0; font-family: var(--wp--preset--font-family--heading); font-size: clamp(5rem, 22vw, 11rem); font-weight: 900; line-height: 1; background: linear-gradient(180deg, #fff6dc, var(--oe-gold) 55%, #7a561b); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 30px rgba(232, 183, 90, 0.35)); }
+
+/* Narrow screens: tighter page rhythm. */
+@media (max-width: 600px) {
+	:root { --oe-header-h: 4rem; }
+	.oe-brand .wp-block-site-title { font-size: 1rem; }
+}
+
+/* ---------- Layout glue ------------------------------------------------------ */
+
+/* The site's own sections handle their spacing; the global block gap would add stray margins between them. */
+.wp-site-blocks > * { margin-block-start: 0; margin-block-end: 0; }
+.oe-main > *, .oe-footer__grid > *, .oe-footer__bottom > * { margin-block-start: 0; margin-block-end: 0; }
+.oe-footer__grid > * > * + * { margin-block-start: 0.6rem; }
+/* Header content lines up with the wide column. */
+.oe-header { padding-inline: max(var(--wp--preset--spacing--40), calc((100% - 76rem) / 2)); }
+.oe-footer__grid, .oe-footer__bottom { padding-inline: var(--wp--preset--spacing--40); }
+.oe-pagebody { padding-inline: var(--wp--preset--spacing--40); }
+.oe-pagebody > * + * { margin-block-start: 2rem; }
+.oe-section { padding-inline: var(--wp--preset--spacing--40); }
+.oe-section > * + * { margin-block-start: 1.5rem; }
+.oe-section > .oe-eyebrow + * { margin-block-start: 0; }
+.oe-section > .wp-block-heading + * { margin-block-start: 0.6rem; }
+.oe-section > .oe-section__lead + *, .oe-section > .wp-block-heading + .oe-steps { margin-block-start: 2.5rem; }
+.oe-pagehead { padding-inline: var(--wp--preset--spacing--40); }
+.oe-pagehead > * + * { margin-block-start: 0; }
+.oe-pagehead > .oe-pagehead__lead { margin-block-start: 1.1rem; }
+.oe-pagehead > .wp-block-heading { margin-block: 0; font-size: clamp(2.2rem, 6vw, 3.8rem); background: linear-gradient(180deg, #fff6dc 0%, var(--oe-gold-light) 45%, #c4903a 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.oe-pagehead .wp-block-query-title { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); background: linear-gradient(180deg, #fff6dc, var(--oe-gold-light) 50%, #c4903a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.oe-pagehead .wp-block-post-terms.oe-pagehead__eyebrow a { color: inherit; text-decoration: none; }
+.oe-pagehead .wp-block-search { margin-top: 1.5rem; max-width: 30rem; margin-inline: auto; }
+.oe-pagehead .wp-block-term-description { margin-top: 1rem; }
+/* Link lists in the footer have no bullets (the list block adds its own padding). */
+.oe-links { padding: 0; list-style: none; }
+.oe-error .wp-block-search { max-width: 28rem; margin: 1.5rem auto; }
+.oe-error .wp-block-buttons { margin-top: 1rem; }
+.wp-block-post-date, .wp-block-post-author-name { margin: 0; }
+
+/* Primary button: the gold gradient is set here because theme.json's button background does not take a gradient preset reliably. */
+.wp-element-button:not(.has-background), .wp-block-button__link:not(.has-background) { background: var(--wp--preset--gradient--gold-sheen); color: #1a1203; }
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background), .wp-block-button.is-style-oe-ghost .wp-block-button__link:not(.has-background) { background: rgba(7, 8, 13, 0.35); color: var(--oe-gold-light); }
+/* Grids: equal-height cells, no flow-layout margins between the cells. */
+.oe-steps > *, .oe-downloads > *, .oe-reqs > *, .oe-posts .wp-block-post-template > * { margin-block: 0 !important; }
+.oe-steps, .oe-downloads { align-items: stretch; }
+.oe-posts .wp-block-post-template { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); padding: 0; list-style: none; }
+.oe-pagehead > .oe-orn { margin-top: 1.6rem; }
+/* The plugin's "not connected / not available" lines become a calm notice panel instead of loose red text. */
+:is(.oe-pagebody, .oe-section) p.openmu-line--requirement {
+	max-width: 40rem; margin: 0 auto; padding: 1rem 1.4rem; text-align: center;
+	background: rgba(255, 106, 61, 0.07); border: 1px solid rgba(255, 106, 61, 0.3); border-left: 3px solid var(--wp--preset--color--ember);
+}
+.wp-block-table td:first-child { width: 34%; }
+@media (max-width: 700px) { .wp-block-table td:first-child { width: auto; } }
+/* The notice inside a window (mini games) needs no second frame. */
+.is-style-mu-window p.openmu-line--requirement { background: none; border: 0; padding: 0.5rem; }
+
+/* ---------- Diacritics in gradient headings ----------------------------------- */
+
+/* background-clip:text paints only inside the element box, so accents above capitals (Ń, Ś, Ć, Ż) were cut off
+   by the tight line height. Extra padding gives them room; the negative margin keeps the layout unchanged. */
+.oe-hero__title, .oe-pagehead .wp-block-post-title, .oe-pagehead > .wp-block-heading, .oe-pagehead .wp-block-query-title, .oe-error__code {
+	padding-block: 0.16em 0.08em;
+	margin-block: -0.16em -0.08em !important;
+}
+.oe-pagehead > .wp-block-heading, .oe-pagehead .wp-block-post-title, .oe-pagehead .wp-block-query-title { line-height: 1.2; }
+
+/* ---------- News card fallback picture ------------------------------------------- */
+
+/* Posts without a featured image: a small scene from the theme's art; the sky hue (--hue) varies by post. */
+.oe-fallback { position: relative; margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: #090b13; }
+.oe-fallback__sky {
+	position: absolute; inset: 0; filter: hue-rotate(var(--hue, 0deg));
+	background: radial-gradient(90% 70% at 70% 30%, rgba(120, 70, 50, 0.55), transparent 70%), radial-gradient(80% 80% at 10% 0%, rgba(40, 60, 120, 0.7), transparent 70%), linear-gradient(180deg, #0a0d19, #151220);
+}
+.oe-fallback img { position: absolute; display: block; max-width: none; height: auto; }
+.oe-fallback__sun { width: 62%; right: -6%; top: -12%; filter: hue-rotate(calc(var(--hue, 0deg) * 0.4)); }
+.oe-fallback__ground { width: 150%; left: -25%; bottom: -4%; }
+.oe-fallback__castle { width: 70%; right: -4%; bottom: 6%; }
+.oe-fallback__fog { width: 150%; left: -20%; bottom: -8%; opacity: 0.6; }
+.oe-fallback img.oe-fallback__hero { height: 94%; width: auto; left: 50%; bottom: 0; transform: translateX(-50%); filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 18px rgba(232, 183, 90, 0.25)); }
+.oe-fallback--1 img.oe-fallback__hero { left: 34%; }
+.oe-fallback--2 img.oe-fallback__hero { left: 66%; }
+.oe-card .oe-fallback { transition: filter 0.4s; }
+.oe-card:hover .oe-fallback { filter: brightness(1.15); }
+
+.oe-nav__link[title] { cursor: pointer; }

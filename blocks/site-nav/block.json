@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "openmu-eclipse/site-nav",
+	"title": "Site menu",
+	"category": "design",
+	"icon": "menu",
+	"description": "The theme's menu: Home, News, Download, a Server submenu, Account. Built from the pages by their address; works on touch and as a full-screen menu on phones.",
+	"textdomain": "openmu-eclipse",
+	"supports": { "html": false, "autoRegister": true },
+	"render": "file:./render.php"
+}
