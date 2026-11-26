@@ -46,6 +46,9 @@ z aktualnościami, a strony serwera informują, że wtyczka jest potrzebna.
 Włączenie motywu tworzy potrzebne strony po adresach (Start, Aktualności, Pobierz, Ranking, Mini gry, Zbrojownia,
 Wydarzenia, Komendy, Konto), ustawia Start jako stronę główną i Aktualności jako stronę wpisów, a po przełączeniu
 na inny motyw przywraca poprzednie ustawienia czytania. Strony z innymi adresami zostają nietknięte.
+Strony powstają raz i tylko tam, gdzie żadnej nie ma: strona, która już stoi pod jednym z tych adresów
+(także szkic albo prywatna), i zmiany z edytora witryny nie są ruszane, a ustawienia czytania wybrane
+przez Ciebie zostają.
 
 ## Postacie klas i dane przedmiotów w zbrojowni (opcjonalnie)
 

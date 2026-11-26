@@ -47,6 +47,9 @@ and the server pages say that the plugin is needed.
 Activating the theme creates the pages it needs by address (Home, News, Download, Ranking, Mini games, Armory,
 Events, Commands, Account), makes Home the front page and News the posts page, and restores your previous
 reading settings when you switch to another theme. Pages with other addresses are left alone.
+Pages are created once and only where none exists: a page already at one of these addresses
+(also a draft or private one) and changes made in the Site Editor are never touched, and Reading
+settings you chose yourself stay.
 
 ## Class pictures and item data in the armory (optional)
 
