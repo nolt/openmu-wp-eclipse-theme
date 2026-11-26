@@ -227,7 +227,7 @@ function openmu_eclipse_pagehead( string $icon, string $eyebrow, string $lead = 
 function openmu_eclipse_page_links( array $slugs ): string {
 	$items = '';
 	foreach ( $slugs as $slug ) {
-		$page   = get_page_by_path( $slug );
+		$page   = openmu_eclipse_public_page( $slug );
 		$name   = $page ? get_the_title( $page ) : ucfirst( str_replace( '-', ' ', $slug ) );
 		$items .= '<!-- wp:list-item --><li><a href="' . esc_url( openmu_eclipse_page_url( $slug ) ) . '">' . esc_html( $name ) . '</a></li><!-- /wp:list-item -->';
 	}
@@ -260,12 +260,14 @@ function openmu_eclipse_post_card(): string {
  * theme's own art (eclipse, mountains, castle, one of the three heroes) on a sky whose
  * hue depends on the post ID, so neighbouring cards differ but a post always looks the same.
  *
- * @param string   $content  Rendered block (empty when there is no image).
+ * @param mixed    $content  Rendered block (empty when there is no image); not typed,
+ *                           because a filter of another plugin may hand over null.
  * @param array    $block    Parsed block.
  * @param WP_Block $instance Block instance (carries the post ID in its context).
  * @return string
  */
-function openmu_eclipse_card_fallback( string $content, array $block, $instance ): string {
+function openmu_eclipse_card_fallback( $content, array $block, $instance ): string {
+	$content = (string) $content;
 	if ( '' !== trim( $content ) || ( $block['attrs']['sizeSlug'] ?? '' ) !== 'openmu-eclipse-card' ) {
 		return $content;
 	}
@@ -294,11 +296,12 @@ add_filter( 'render_block_core/post-featured-image', 'openmu_eclipse_card_fallba
  * Hides the category label when the post only has the default category ("Uncategorized"),
  * which tells visitors nothing.
  *
- * @param string $content Rendered post-terms block.
+ * @param mixed  $content Rendered post-terms block; not typed, another filter may hand over null.
  * @param array  $block   Parsed block.
  * @return string
  */
-function openmu_eclipse_hide_default_category( string $content, array $block ): string {
+function openmu_eclipse_hide_default_category( $content, array $block ): string {
+	$content = (string) $content;
 	if ( 'category' !== ( $block['attrs']['term'] ?? '' ) ) {
 		return $content;
 	}
@@ -318,15 +321,38 @@ add_filter( 'render_block_core/post-terms', 'openmu_eclipse_hide_default_categor
  * that text (so it is already in the site language) and adds it as a faint label, which
  * the paper-doll layout in plugin.css shows in each empty socket.
  *
- * @param string $content Rendered armory or account block.
- * @return string
+ * @param mixed $content Rendered armory or account block; not typed, another filter may hand over null.
+ * @return string The block with the labels, or unchanged when the pattern cannot be applied.
  */
-function openmu_eclipse_label_empty_sockets( string $content ): string {
-	return (string) preg_replace(
+function openmu_eclipse_label_empty_sockets( $content ): string {
+	$content = (string) $content;
+	// preg_replace() returns null on a PCRE error (backtrack limit, broken UTF-8); the block
+	// must then stay as the plugin rendered it rather than disappear.
+	$labelled = preg_replace(
 		'#(<li class="openmu-cv__slot [^"]*is-empty">\s*<span class="openmu-cv__sr">\s*)([^<:]+?)(\s*:[^<]*</span>)#u',
 		'$1$2$3<span class="oe-slot-label" aria-hidden="true">$2</span>',
 		$content
 	);
+	return null === $labelled ? $content : $labelled;
 }
+
+/**
+ * Leaves out the OpenMU plugin's blocks on a page that still asks for its password.
+ *
+ * The page templates place the plugin's blocks (ranking, armory, account ...) next to the
+ * page's own content, not inside it, so the password form of the content would not cover
+ * them. Hooked to render_block.
+ *
+ * @param mixed                $content Rendered block; not typed, another filter may hand over null.
+ * @param array<string, mixed> $block   Parsed block.
+ * @return mixed The block, or an empty string on a locked page.
+ */
+function openmu_eclipse_hide_plugin_blocks_on_locked_page( $content, array $block ) {
+	if ( str_starts_with( (string) ( $block['blockName'] ?? '' ), 'openmu/' ) && is_singular() && post_password_required( get_queried_object_id() ) ) {
+		return '';
+	}
+	return $content;
+}
+add_filter( 'render_block', 'openmu_eclipse_hide_plugin_blocks_on_locked_page', 10, 2 );
 add_filter( 'render_block_openmu/armory', 'openmu_eclipse_label_empty_sockets' );
 add_filter( 'render_block_openmu/account', 'openmu_eclipse_label_empty_sockets' );

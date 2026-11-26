@@ -10,6 +10,9 @@
 (function () {
 	'use strict';
 
+	// Tells the fail-safe in the head (inc/assets.php) that the script runs, so it keeps "oe-js".
+	document.documentElement.classList.add('oe-ready');
+
 	var header = document.querySelector('.oe-header');
 	var nav = document.querySelector('[data-oe-nav]');
 

@@ -23,8 +23,8 @@ defined( 'ABSPATH' ) || exit;
  */
 function openmu_eclipse_menu(): array {
 	$item = static function ( string $slug ): ?array {
-		$page = get_page_by_path( $slug );
-		if ( ! $page || 'publish' !== $page->post_status ) {
+		$page = openmu_eclipse_public_page( $slug );
+		if ( ! $page ) {
 			return null;
 		}
 		$hint = '';
@@ -86,6 +86,21 @@ function openmu_eclipse_menu_is_current( string $slug ): bool {
  * @return string
  */
 function openmu_eclipse_page_url( string $slug ): string {
-	$page = get_page_by_path( $slug );
-	return $page ? get_permalink( $page ) : home_url( '/' . $slug . '/' );
+	$page = openmu_eclipse_public_page( $slug );
+	$url  = $page ? get_permalink( $page ) : false;
+	return is_string( $url ) && '' !== $url ? $url : home_url( '/' . $slug . '/' );
+}
+
+/**
+ * Returns a page of the theme's fixed set when visitors may see it, else null.
+ *
+ * get_page_by_path() alone also finds drafts, private and scheduled pages and, when no page
+ * has the address, a Media Library upload with that name. The menu, buttons and the footer
+ * use this instead, so they never show the title of a hidden page or lead to someone's upload.
+ *
+ * @param string $slug Page address, e.g. "download".
+ */
+function openmu_eclipse_public_page( string $slug ): ?WP_Post {
+	$page = get_page_by_path( $slug, OBJECT, 'page' );
+	return $page instanceof WP_Post && 'publish' === $page->post_status ? $page : null;
 }

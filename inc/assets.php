@@ -51,10 +51,13 @@ add_action( 'wp_head', 'openmu_eclipse_preload_fonts', 1 );
  * Adds the "oe-js" class to <html> so CSS can tell visitors with JavaScript from those without.
  *
  * Printed inline and first so that "no-js" fallbacks (all showcase panels, open menu list)
- * apply only to visitors without scripts.
+ * apply only to visitors without scripts. Printed through core, so a Content Security Policy
+ * plugin can add its nonce. Fail-safe: when the menu script (nav.js, which adds "oe-ready")
+ * has not started after four seconds (blocked, failed to load), the class goes again and the
+ * menu falls back to its plain list of links instead of a button that does nothing.
  */
 function openmu_eclipse_js_class(): void {
-	echo "<script>document.documentElement.classList.add('oe-js');</script>\n";
+	wp_print_inline_script_tag( "(function(d){d.classList.add('oe-js');setTimeout(function(){if(!d.classList.contains('oe-ready')){d.classList.remove('oe-js');}},4000);})(document.documentElement);" );
 }
 add_action( 'wp_head', 'openmu_eclipse_js_class', 0 );
 
