@@ -5,7 +5,7 @@
  * A standalone block theme for OpenMU (MU Online server emulator) websites. This file
  * only defines the theme's version and loads the parts in inc/:
  *
- * - setup.php      theme supports, translations, the client-assets hand-over to the plugin
+ * - setup.php      theme supports, translations, editor style
  * - assets.php     stylesheets, scripts, font preloads, the site-wide ambient background
  * - blocks.php     the theme's dynamic blocks (blocks/*), block styles, pattern categories,
  *                  and helpers the patterns use (art addresses, plugin blocks)

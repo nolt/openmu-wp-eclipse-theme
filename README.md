@@ -48,11 +48,20 @@ Activating the theme creates the pages it needs by address (Home, News, Download
 Events, Commands, Account), makes Home the front page and News the posts page, and restores your previous
 reading settings when you switch to another theme. Pages with other addresses are left alone.
 
-## Game client files
+## Class pictures and item data in the armory (optional)
 
-The theme ships no files of the MU Online game client. The armory therefore shows the plugin's neutral class
-emblem and the item names. To show class pictures and full item tooltips, put the files from your own game client
-into the plugin's client folder, as its README describes.
+The theme ships no files of the game client. The OpenMU WP Connect plugin looks for them in
+`wp-content/uploads/openmu-wp-connect-client/` and uses each part it finds there; whatever is
+missing falls back to the theme's own look:
+
+| Folder | Gives | Without it |
+|---|---|---|
+| `classes/` | a full-body picture of the character's class in the armory | the class emblem |
+| `data/` (`items.json`, `item-sets.json`, `skills.json`) | full item tooltips: base stats, requirements, descriptions | the tooltip with what the API sends |
+| `character-view/` | armory windows from the client's textures | windows in the colours of the theme |
+
+Copy the folders to the server once (SFTP, ssh, `docker cp`); WordPress's media upload can't
+create them. The same folder works for every theme.
 
 ## Pages
 

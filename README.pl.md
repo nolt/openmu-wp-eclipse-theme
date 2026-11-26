@@ -47,11 +47,20 @@ Włączenie motywu tworzy potrzebne strony po adresach (Start, Aktualności, Pob
 Wydarzenia, Komendy, Konto), ustawia Start jako stronę główną i Aktualności jako stronę wpisów, a po przełączeniu
 na inny motyw przywraca poprzednie ustawienia czytania. Strony z innymi adresami zostają nietknięte.
 
-## Pliki klienta gry
+## Postacie klas i dane przedmiotów w zbrojowni (opcjonalnie)
 
-Motyw nie zawiera żadnych plików klienta MU Online. Zbrojownia pokazuje więc neutralny herb klasy z wtyczki
-i nazwy przedmiotów. Żeby pokazać obrazki klas i pełne opisy przedmiotów, wgraj pliki ze swojego klienta gry do
-folderu klienta we wtyczce, jak opisuje jej README.
+Motyw nie zawiera plików klienta gry. Wtyczka OpenMU WP Connect szuka ich w
+`wp-content/uploads/openmu-wp-connect-client/` i używa każdej części, którą tam znajdzie; czego
+brakuje, tam zostaje wygląd motywu:
+
+| Folder | Daje | Bez niego |
+|---|---|---|
+| `classes/` | postać klasy w ramce zbrojowni | emblemat klasy |
+| `data/` (`items.json`, `item-sets.json`, `skills.json`) | pełne dymki przedmiotów: statystyki bazowe, wymagania, opisy | dymek z tym, co wysyła API |
+| `character-view/` | okna zbrojowni z tekstur klienta | okna w kolorach motywu |
+
+Foldery kopiuje się na serwer raz (SFTP, ssh, `docker cp`); wysyłanie mediów w WordPressie ich nie
+utworzy. Ten sam folder działa z każdym motywem.
 
 ## Strony
 
