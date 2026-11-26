@@ -23,7 +23,13 @@
 	--oe-line-strong: rgba(232, 183, 90, 0.5);
 	--oe-glass: linear-gradient(160deg, rgba(24, 28, 44, 0.78), rgba(10, 12, 20, 0.84));
 	--oe-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+	/* Dark page: form fields, scrollbars and autofill follow it instead of the light defaults. */
+	color-scheme: dark;
 }
+
+/* Embedded pages (videos, maps, Discord widgets) keep their own colour scheme: under the dark
+   one above, an embed that does not declare its own would get an opaque white background. */
+iframe { color-scheme: normal; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; overflow-x: clip; }
 html.oe-nav-open { overflow: hidden; }
