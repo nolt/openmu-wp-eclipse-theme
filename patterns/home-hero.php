@@ -40,7 +40,7 @@
 				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( openmu_eclipse_page_url( 'download' ) ); ?>"><?php echo openmu_eclipse_icon( 'play' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built by the helper. ?><?php esc_html_e( 'Play now', 'openmu-eclipse' ); ?></a></div>
 				<!-- /wp:button -->
 				<!-- wp:button {"className":"is-style-outline"} -->
-				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( openmu_eclipse_page_url( 'account' ) ); ?>"><?php esc_html_e( 'Create account', 'openmu-eclipse' ); ?></a></div>
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( openmu_eclipse_page_url( 'account' ) ); ?>"><?php echo esc_html( openmu_eclipse_player_logged_in() ? __( 'My account', 'openmu-eclipse' ) : __( 'Create account', 'openmu-eclipse' ) ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

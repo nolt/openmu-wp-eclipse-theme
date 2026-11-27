@@ -3,20 +3,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenMU Eclipse 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/openmu-eclipse\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-24T06:46:11+00:00\n"
+"POT-Creation-Date: 2026-11-27T08:03:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: openmu-eclipse\n"
 
 #. Theme Name of the theme
 #: style.css
-#: inc/blocks.php:37
+#: inc/blocks.php:67
 msgid "OpenMU Eclipse"
 msgstr ""
 
@@ -48,96 +48,96 @@ msgstr ""
 msgid "Heavy plate, a mighty blade and a wall of vitality. The Dark Knight leads the charge, soaks the hits and cuts down whole packs with sweeping strikes."
 msgstr ""
 
-#: blocks/class-showcase/render.php:29
+#: blocks/class-showcase/render.php:34
 msgid "Arcane artillery"
 msgstr ""
 
-#: blocks/class-showcase/render.php:30
+#: blocks/class-showcase/render.php:35
 msgid "Frail in the robe, devastating at range. The Dark Wizard hurls fire and lightning and brings down a pack of monsters before it reaches him."
 msgstr ""
 
-#: blocks/class-showcase/render.php:37
+#: blocks/class-showcase/render.php:47
 msgid "Archer and healer"
 msgstr ""
 
-#: blocks/class-showcase/render.php:38
+#: blocks/class-showcase/render.php:48
 msgid "Light armour, a longbow and the gift of the forest. The Fairy Elf shoots from afar, heals her party and lends it strength with her blessings."
 msgstr ""
 
-#: blocks/class-showcase/render.php:45
+#: blocks/class-showcase/render.php:60
 msgid "Attack"
 msgstr ""
 
-#: blocks/class-showcase/render.php:46
+#: blocks/class-showcase/render.php:61
 msgid "Defence"
 msgstr ""
 
-#: blocks/class-showcase/render.php:47
+#: blocks/class-showcase/render.php:62
 msgid "Range"
 msgstr ""
 
-#: blocks/class-showcase/render.php:48
+#: blocks/class-showcase/render.php:63
 msgid "Support"
 msgstr ""
 
-#: blocks/class-showcase/render.php:67
+#: blocks/class-showcase/render.php:82
 msgid "Choose a class"
 msgstr ""
 
 #. translators: 1: rating 1-5.
-#: blocks/class-showcase/render.php:88
+#: blocks/class-showcase/render.php:103
 #, php-format
 msgid "%d out of 5"
 msgstr ""
 
-#: blocks/class-showcase/render.php:92
+#: blocks/class-showcase/render.php:111
 msgid "Signature skills"
 msgstr ""
 
-#: blocks/site-nav/render.php:20
+#: blocks/site-nav/render.php:26
 msgid "Main menu"
 msgstr ""
 
-#: blocks/site-nav/render.php:23
+#: blocks/site-nav/render.php:33
 msgid "Menu"
 msgstr ""
 
-#: blocks/site-nav/render.php:60
+#: blocks/site-nav/render.php:70
 #: patterns/home-hero.php:40
 msgid "Play now"
 msgstr ""
 
-#: inc/blocks.php:31
+#: inc/blocks.php:35
 msgid "Window"
 msgstr ""
 
-#: inc/blocks.php:32
+#: inc/blocks.php:42
 msgid "Glass panel"
 msgstr ""
 
-#: inc/blocks.php:33
+#: inc/blocks.php:49
 msgid "Card"
 msgstr ""
 
-#: inc/blocks.php:34
+#: inc/blocks.php:56
 msgid "Ornate (centred, with divider)"
 msgstr ""
 
-#: inc/blocks.php:35
+#: inc/blocks.php:63
 msgid "Ghost"
 msgstr ""
 
-#: inc/blocks.php:38
+#: inc/blocks.php:68
 msgid "OpenMU Eclipse pages"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: inc/blocks.php:96
+#: inc/blocks.php:126
 #, php-format
 msgid "This section shows data from the game server. It needs the %s plugin: install and activate it."
 msgstr ""
 
-#: inc/blocks.php:221
+#: inc/blocks.php:251
 msgid "Read more"
 msgstr ""
 
@@ -150,47 +150,41 @@ msgstr ""
 msgid "Server"
 msgstr ""
 
-#: inc/site-setup.php:43
+#: inc/site-setup.php:53
 msgid "Home"
 msgstr ""
 
-#: inc/site-setup.php:44
+#: inc/site-setup.php:54
 #: patterns/page-news.php:17
 msgid "News"
 msgstr ""
 
-#: inc/site-setup.php:45
+#: inc/site-setup.php:55
 msgid "Download"
 msgstr ""
 
-#: inc/site-setup.php:46
+#: inc/site-setup.php:56
 msgid "Ranking"
 msgstr ""
 
-#: inc/site-setup.php:47
+#: inc/site-setup.php:57
 msgid "Mini games"
 msgstr ""
 
-#: inc/site-setup.php:48
+#: inc/site-setup.php:58
 msgid "Armory"
 msgstr ""
 
-#: inc/site-setup.php:49
+#: inc/site-setup.php:59
 msgid "Events"
 msgstr ""
 
-#: inc/site-setup.php:50
+#: inc/site-setup.php:60
 msgid "Commands"
 msgstr ""
 
-#: inc/site-setup.php:51
+#: inc/site-setup.php:61
 msgid "Account"
-msgstr ""
-
-#. translators: 1: page title, 2: date.
-#: inc/site-setup.php:198
-#, php-format
-msgid "%1$s (backup %2$s)"
 msgstr ""
 
 #: patterns/footer.php
@@ -307,7 +301,7 @@ msgstr ""
 msgid "Upcoming events"
 msgstr ""
 
-#: patterns/home-events.php:22
+#: patterns/home-events.php:31
 msgid "Full schedule"
 msgstr ""
 
@@ -333,6 +327,10 @@ msgstr ""
 #: patterns/home-hero.php:30
 #, php-format
 msgid "The sun has gone dark over the old continent. Take up the blade, the staff or the bow and write your legend on %s."
+msgstr ""
+
+#: patterns/home-hero.php:43
+msgid "My account"
 msgstr ""
 
 #: patterns/home-hero.php:43
@@ -384,7 +382,7 @@ msgstr ""
 msgid "Top players"
 msgstr ""
 
-#: patterns/home-ranking.php:22
+#: patterns/home-ranking.php:31
 msgid "Full ranking"
 msgstr ""
 
@@ -896,197 +894,197 @@ msgctxt "block description"
 msgid "The theme's menu: Home, News, Download, a Server submenu, Account. Built from the pages by their address; works on touch and as a full-screen menu on phones."
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Obsidian"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Night"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Slate"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Steel shadow"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Parchment"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Ash"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Molten gold"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Corona gold"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Ember"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Crimson"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Arcane cyan"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Item option blue"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Excellent green"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Ancient gold"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Color name"
 msgid "Requirement red"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Gradient name"
 msgid "Gold sheen"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Gradient name"
 msgid "Ember glow"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Gradient name"
 msgid "Night sky"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font family name"
 msgid "Cinzel"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font family name"
 msgid "Inter"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font family name"
 msgid "System mono"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font size name"
 msgid "Small"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font size name"
 msgid "Medium"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font size name"
 msgid "Large"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font size name"
 msgid "Extra large"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font size name"
 msgid "Huge"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Font size name"
 msgid "Display"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "XS"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "S"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "M"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "L"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "XL"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "2XL"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Space size name"
 msgid "3XL"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Shadow name"
 msgid "Gold glow"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Shadow name"
 msgid "Deep"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Template part name"
 msgid "Header"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Template part name"
 msgid "Footer"
 msgstr ""
 
-#: theme.json
+#: heme.json
 msgctxt "Custom template name"
 msgid "Wide page"
 msgstr ""
